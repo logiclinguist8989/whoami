@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /test-results/
+
+Sitemap: https://logiclinguist8989.github.io/whoami/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

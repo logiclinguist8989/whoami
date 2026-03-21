@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Ayush, a B.Tech Ed IT student specializing in Full-Stack Development, Cybersecurity, and Enterprise Systems. Explore 7 projects including SafeClick, Gurans ERP, and more." />
+  <meta name="keywords" content="Full-Stack Developer, Cybersecurity, Python, Django, FastAPI, JavaScript, Enterprise Systems, Educational Technology" />
+  <meta name="author" content="Ayush Hamal" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  
+  <!-- Canonical URL - Update this with your actual domain -->
+  <link rel="canonical" href="https://logiclinguist8989.github.io/whoami/" />
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://logiclinguist8989.github.io/whoami/" />
+  <meta property="og:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
+  <meta property="og:description" content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
+  <meta property="og:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
+  <meta property="og:site_name" content="Ayush Portfolio" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://logiclinguist8989.github.io/whoami/" />
+  <meta property="twitter:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
+  <meta property="twitter:description" content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
+  <meta property="twitter:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
+  
+  <!-- Additional SEO Meta -->
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="30 days" />
+  <meta name="theme-color" content="#1e293b" />
+  
+  <title>Ayush | Full-Stack Developer & Cybersecurity Specialist</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+
+<body>
+  <canvas id="matrix-canvas"></canvas>
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="logo">Ayush<span class="accent">.</span></div>
+      <div class="nav-controls">
+        <button class="theme-toggle" aria-label="Toggle light/dark mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Learning</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero" tabindex="-1">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="badge">B.Tech Ed IT Student</div>
+        <h1 class="hero-title">Hi, I'm <span class="glitch-wrapper"><span class="highlight-text glitch"
+              data-text="Ayush">Ayush</span></span></h1>
+        <h2 class="hero-subtitle">Full-Stack & Cybersecurity Enthusiast</h2>
+        <p class="hero-tagline">
+          Bridging the gap between software development and security. Passionate about building robust systems,
+          dissecting networks, and exploring the frontiers of AI/ML.
+        </p>
+        <div class="cta-buttons">
+          <a href="#projects" class="cta-btn primary">View Projects</a>
+          <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" class="cta-btn secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+            View GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+        <div class="glass-card profile-card">
+          <div class="profile-placeholder" style="border: none; background: transparent; overflow: hidden;">
+            <img src="assets/images/profile.jpg" alt="Ayush Profile"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+          </div>
+          <div class="floating-badge badge-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Security
+          </div>
+          <div class="floating-badge badge-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            Code
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="terminal section" tabindex="-1">
+      <div class="terminal-container glass-card" data-aos="fade-up">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="close"></span>
+            <span class="minimize"></span>
+            <span class="maximize"></span>
+          </div>
+          <div class="terminal-title">guest@ayush-portfolio:~</div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <p class="terminal-prompt">Welcome to Ayush OS v1.0.0</p>
+          <p class="terminal-response">Type 'help' to see available commands.</p>
+          <div class="terminal-input-line">
+            <span class="terminal-prefix">guest@ayush-portfolio:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false"
+              autofocus>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>About Me</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-container">
+        <div class="about-text" data-aos="fade-right">
+          <p class="bio">
+            I am a B.Tech Ed IT student with a deep-rooted passion for technology. My journey started with programming
+            fundamentals and quickly evolved into a fascination with how systems communicate and how they can be
+            secured.
+          </p>
+          <p class="bio">
+            Currently, I'm focusing my learning around <strong>Full-Stack Development</strong>,
+            <strong>Cybersecurity</strong>, and <strong>AI/ML</strong>. I thrive on problem-solving, exploring Linux
+            environments, and participating in CTFs. My ultimate goal is to continuously learn, build secure
+            applications, and contribute meaningfully to the tech community.
+          </p>
+        </div>
+        <div class="about-stats glass-panel" data-aos="fade-left">
+          <div class="stat-item">
+            <span class="stat-icon">🎓</span>
+            <div class="stat-info">
+              <h3>B.Tech Ed IT</h3>
+              <p>Undergraduate</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌍</span>
+            <div class="stat-info">
+              <h3>Nepal</h3>
+              <p>Based In</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">💡</span>
+            <div class="stat-info">
+              <h3>Continuous</h3>
+              <p>Learning & Growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Technical Arsenal</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="skills-grid">
+        <!-- Programming -->
+        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="100">
+          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg> Programming</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>HTML/CSS</span></div>
+              <div class="progress-bar">
+                <div class="progress" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript</span></div>
+              <div class="progress-bar">
+                <div class="progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Python</span></div>
+              <div class="progress-bar">
+                <div class="progress" data-width="80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="200">
+          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+              </path>
+            </svg> Tools</h3>
+          <div class="tool-tags">
+            <span class="tool-tag">Linux</span>
+            <span class="tool-tag">Git/GitHub</span>
+            <span class="tool-tag">VS Code</span>
+            <span class="tool-tag">Wireshark</span>
+            <span class="tool-tag">Nmap</span>
+            <span class="tool-tag">Burp Suite</span>
+          </div>
+        </div>
+
+        <!-- Domains -->
+        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="300">
+          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg> Domains</h3>
+          <ul class="domain-list">
+            <li>Cybersecurity & Ethical Hacking</li>
+            <li>Full-Stack Web Development</li>
+            <li>Networking & Protocol Analysis</li>
+            <li>AI/ML Foundations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="project-filters" data-aos="fade-up" data-aos-delay="50">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="education">Education Tech</button>
+        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: PyPortScan -->
+        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M3 12h18"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+              </svg></div>
+            <h3>PyPortScan</h3>
+            <p>Advanced port scanning tool written in Python. Efficiently scans networks and identifies open ports with detailed analysis for security auditing and network reconnaissance.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Port Scanning</span>
+              <span>Security</span>
+            </div>
+            <a href="https://github.com/logiclinguist8989/PyPortScan" target="_blank" rel="noopener" class="project-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: CyberLens -->
+        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg></div>
+            <h3>CyberLens</h3>
+            <p>Production-ready network monitoring and vulnerability dashboard. Features real-time system monitoring, ARP-based device discovery, port scanning, security alerts, and Docker containerization for enterprise deployment.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>Docker</span>
+              <span>Security</span>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
+              data-toast="Private Repository - Contact for access">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Project (Private)
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Student Learning Analytics -->
+        <article class="project-card glass-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                <line x1="1" y1="3" x2="23" y2="3"></line>
+                <path d="M10 12v3M14 12v3"></path>
+              </svg></div>
+            <h3>Student Learning Analytics</h3>
+            <p>Machine learning project for analyzing student learning patterns, clustering students by behavior, and predicting dropout risk. Features advanced ML algorithms and educational data analysis for institutional analytics.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Scikit-learn</span>
+              <span>Pandas</span>
+              <span>ML</span>
+            </div>
+            <a href="https://github.com/logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction" target="_blank" rel="noopener" class="project-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Exam Seating Automation -->
+        <article class="project-card glass-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg></div>
+            <h3>Exam Seating Automation System</h3>
+            <p>Django-based educational technology platform for automated exam seating allocation. Features student management, room allocation, role-based access control (Admin, Coordinator, Invigilator), fair distribution algorithms, and comprehensive seating plan generation.</p>
+            <div class="project-tags">
+              <span>Django</span>
+              <span>MySQL</span>
+              <span>Bootstrap 5</span>
+              <span>Education</span>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
+              data-toast="Private Repository - Contact for access">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Project (Private)
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: SLS -->
+        <article class="project-card glass-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg></div>
+            <h3>SLS</h3>
+            <p>Versatile Python project demonstrating software development practices and utilities. Includes modular architecture, clean code principles, and practical functionality for various use cases in development workflows.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Utilities</span>
+              <span>Development</span>
+            </div>
+            <a href="https://github.com/logiclinguist8989/SLS" target="_blank" rel="noopener" class="project-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: SafeClick -->
+        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="350">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg></div>
+            <h3>SafeClick</h3>
+            <p>Privacy-first phishing & scam detection browser extension. Features hashed URL analysis, no user accounts required, multi-language support (English, Nepali), and FastAPI backend with Redis caching for enterprise-grade threat detection.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>FastAPI</span>
+              <span>Browser Extension</span>
+              <span>Security</span>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
+              data-toast="Private Repository - Contact for access">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Project (Private)
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 7: Gurans Sales Management -->
+        <article class="project-card glass-card" data-category="enterprise" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-content">
+            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg></div>
+            <h3>Gurans Sales Management System</h3>
+            <p>Production-ready enterprise sales management platform. Features 6-level RBAC, hierarchical approval workflows, multi-currency pricing tiers, real-time notifications, financial reporting, performance analytics, and comprehensive audit logging with async task queue.</p>
+            <div class="project-tags">
+              <span>Django 5.0</span>
+              <span>PostgreSQL</span>
+              <span>Celery</span>
+              <span>Enterprise</span>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
+              data-toast="Proprietary System - Contact for details">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Project (Proprietary)
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certifications & Learning -->
+    <section id="certifications" class="certifications section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Continuous Learning</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline" data-aos="fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <h3>Cybersecurity Fundamentals</h3>
+            <p class="timeline-date">Ongoing</p>
+            <p>Engaging in platforms like TryHackMe and HackTheBox to build practical skills in enumeration,
+              exploitation, and privilege escalation.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <h3>Linux Server Administration</h3>
+            <p class="timeline-date">Self-Taught Labs</p>
+            <p>Configuring and securing local virtual machines running Ubuntu and CentOS. Implementing firewall rules
+              (UFW/iptables), SSH hardening, and user permissions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <h3>AI/ML Foundational Learning</h3>
+            <p class="timeline-date">Academic & Independent</p>
+            <p>Exploring the core concepts of artificial intelligence, data processing with Pandas, and model building
+              through academic assignments and self-paced courses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Research (Optional) -->
+    <section id="blog" class="blog section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Technical Write-ups</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="blog-category">Linux</span>
+          <h3>Securing Your First VPS</h3>
+          <p>A beginner's guide to the first 10 steps you should take immediately after spinning up a new Linux server.
+          </p>
+          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
+            <span>&rarr;</span></a>
+        </div>
+        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="blog-category">Networking</span>
+          <h3>Understanding TCP/IP via Wireshark</h3>
+          <p>Analyzing a typical HTTP request layer-by-layer to demystify how packets traverse the internet.</p>
+          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
+            <span>&rarr;</span></a>
+        </div>
+        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <span class="blog-category">Cybersecurity</span>
+          <h3>The Anatomy of SQL Injection</h3>
+          <p>Breaking down how poorly sanitized inputs lead to database breaches, and how to defend against them.</p>
+          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
+            <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section" tabindex="-1">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Get In Touch</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-container" data-aos="fade-up">
+        <div class="contact-info glass-card">
+          <h3>Let's Connect</h3>
+          <p>I'm currently looking for new opportunities, internships, and collaborative projects. Whether you have a
+            question or just want to say hi, I'll try my best to get back to you!</p>
+          <div class="info-list">
+            <div class="info-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>ayushhamal.aspire.ku@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Nepal</span>
+            </div>
+          </div>
+          <div class="social-links-contact">
+            <a href="https://www.linkedin.com/in/ayush-hamal-623b4127b/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" action="https://formspree.io/f/mqazqjje" method="POST">
+          <input type="hidden" name="_subject" value="New message from Portfolio Website!">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder="Your Name" />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder="Your Email" />
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" required placeholder="Project details or message"></textarea>
+          </div>
+          <button type="submit" class="submit-btn primary-btn"
+            style="width: 100%; border-radius: var(--border-radius-sm); padding: 12px; background: var(--accent-gradient); color: white; border: none; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s;">
+            Send Message
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button class="scroll-top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Ayush. Built with passion and coffee.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
