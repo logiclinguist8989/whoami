@@ -6,34 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Portfolio of Ayush, a B.Tech Ed IT student specializing in Full-Stack Development, Cybersecurity, and Enterprise Systems. Explore 7 projects including SafeClick, Gurans ERP, and more." />
-  <meta name="keywords" content="Full-Stack Developer, Cybersecurity, Python, Django, FastAPI, JavaScript, Enterprise Systems, Educational Technology" />
+  <meta name="keywords"
+    content="Full-Stack Developer, Cybersecurity, Python, Django, FastAPI, JavaScript, Enterprise Systems, Educational Technology" />
   <meta name="author" content="Ayush Hamal" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  
+
   <!-- Canonical URL - Update this with your actual domain -->
   <link rel="canonical" href="https://logiclinguist8989.github.io/whoami/" />
-  
+
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://logiclinguist8989.github.io/whoami/" />
   <meta property="og:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
-  <meta property="og:description" content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
+  <meta property="og:description"
+    content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
   <meta property="og:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
   <meta property="og:site_name" content="Ayush Portfolio" />
-  
+
   <!-- Twitter Card Meta Tags -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://logiclinguist8989.github.io/whoami/" />
   <meta property="twitter:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
-  <meta property="twitter:description" content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
+  <meta property="twitter:description"
+    content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
   <meta property="twitter:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
-  
+
   <!-- Additional SEO Meta -->
   <meta name="language" content="English" />
   <meta name="revisit-after" content="30 days" />
   <meta name="theme-color" content="#1e293b" />
-  
-  <title>Ayush | Full-Stack Developer & Cybersecurity Specialist</title>
+
+  <title>Ayush Hamal| Full-Stack Developer & Cybersecurity Specialist</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +48,21 @@
 </head>
 
 <body>
+  <!-- Reading Scroll Progress Bar -->
+  <div class="scroll-progress-wrapper">
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- System Boot Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div id="boot-text" class="boot-text"></div>
+      <div class="boot-cursor">█</div>
+    </div>
+  </div>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
   <canvas id="matrix-canvas"></canvas>
   <header>
     <nav class="navbar" aria-label="Main Navigation">
@@ -90,7 +108,7 @@
       <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
         <div class="badge">B.Tech Ed IT Student</div>
         <h1 class="hero-title">Hi, I'm <span class="glitch-wrapper"><span class="highlight-text glitch"
-              data-text="Ayush">Ayush</span></span></h1>
+              data-text="Ayush">Ayush Hamal</span></span></h1>
         <h2 class="hero-subtitle">Full-Stack & Cybersecurity Enthusiast</h2>
         <p class="hero-tagline">
           Bridging the gap between software development and security. Passionate about building robust systems,
@@ -112,8 +130,7 @@
       <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
         <div class="glass-card profile-card">
           <div class="profile-placeholder">
-            <img src="assets/images/profile.jpg" alt="Ayush Hamal — Full-Stack Developer"
-              style="width: 130%; height: 130%; object-fit: cover; object-position: center 15%;">
+            <img src="assets/images/profile.jpg" alt="Ayush Hamal — Full-Stack Developer" class="profile-image">
           </div>
           <div class="floating-badge badge-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -210,69 +227,32 @@
         <h2>Technical Arsenal</h2>
         <div class="divider"></div>
       </div>
-      <div class="skills-grid">
-        <!-- Programming -->
-        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="100">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg> Programming</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>HTML/CSS</span></div>
-              <div class="progress-bar">
-                <div class="progress" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>JavaScript</span></div>
-              <div class="progress-bar">
-                <div class="progress" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Python</span></div>
-              <div class="progress-bar">
-                <div class="progress" data-width="80%"></div>
-              </div>
+      <div class="skills-container glass-card" data-aos="zoom-in">
+        <div class="radar-chart-wrapper">
+          <canvas id="skillsRadarChart"></canvas>
+        </div>
+        <div class="skills-legend">
+          <div class="legend-item" data-aos="fade-left" data-aos-delay="100">
+            <span class="dot programming"></span>
+            <div class="legend-text">
+              <h4>Programming</h4>
+              <p>Python, JavaScript, Bash, C/C++</p>
             </div>
           </div>
-        </div>
-
-        <!-- Tools -->
-        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="200">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-              </path>
-            </svg> Tools</h3>
-          <div class="tool-tags">
-            <span class="tool-tag">Linux</span>
-            <span class="tool-tag">Git/GitHub</span>
-            <span class="tool-tag">VS Code</span>
-            <span class="tool-tag">Wireshark</span>
-            <span class="tool-tag">Nmap</span>
-            <span class="tool-tag">Burp Suite</span>
+          <div class="legend-item" data-aos="fade-left" data-aos-delay="200">
+            <span class="dot security"></span>
+            <div class="legend-text">
+              <h4>Cybersecurity</h4>
+              <p>Network Security, CTFs, Pentesting</p>
+            </div>
           </div>
-        </div>
-
-        <!-- Domains -->
-        <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="300">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-              </path>
-            </svg> Domains</h3>
-          <ul class="domain-list">
-            <li>Cybersecurity & Ethical Hacking</li>
-            <li>Full-Stack Web Development</li>
-            <li>Networking & Protocol Analysis</li>
-            <li>AI/ML Foundations</li>
-          </ul>
+          <div class="legend-item" data-aos="fade-left" data-aos-delay="300">
+            <span class="dot fullstack"></span>
+            <div class="legend-text">
+              <h4>Full-Stack</h4>
+              <p>Django, FastAPI, React, SQL</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -295,7 +275,7 @@
 
       <div class="projects-grid">
         <!-- Project 1: PyPortScan -->
-        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
+        <article class="project-card glass-card" data-category="security" data-repo="logiclinguist8989/PyPortScan" data-aos="fade-up" data-aos-delay="100">
           <div class="project-content">
             <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -303,13 +283,15 @@
                 <circle cx="12" cy="12" r="9"></circle>
               </svg></div>
             <h3>PyPortScan</h3>
-            <p>Advanced port scanning tool written in Python. Efficiently scans networks and identifies open ports with detailed analysis for security auditing and network reconnaissance.</p>
+            <p>Advanced port scanning tool written in Python. Efficiently scans networks and identifies open ports with
+              detailed analysis for security auditing and network reconnaissance.</p>
             <div class="project-tags">
               <span>Python</span>
               <span>Port Scanning</span>
               <span>Security</span>
             </div>
-            <a href="https://github.com/logiclinguist8989/PyPortScan" target="_blank" rel="noopener" class="project-link">
+            <a href="https://github.com/logiclinguist8989/PyPortScan" target="_blank" rel="noopener"
+              class="project-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -322,7 +304,7 @@
         </article>
 
         <!-- Project 2: CyberLens -->
-        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="150">
+        <article class="project-card glass-card" data-category="security" data-repo="logiclinguist8989/CyberLens" data-aos="fade-up" data-aos-delay="150">
           <div class="project-content">
             <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -330,7 +312,9 @@
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg></div>
             <h3>CyberLens</h3>
-            <p>Production-ready network monitoring and vulnerability dashboard. Features real-time system monitoring, ARP-based device discovery, port scanning, security alerts, and Docker containerization for enterprise deployment.</p>
+            <p>Production-ready network monitoring and vulnerability dashboard. Features real-time system monitoring,
+              ARP-based device discovery, port scanning, security alerts, and Docker containerization for enterprise
+              deployment.</p>
             <div class="project-tags">
               <span>Python</span>
               <span>Flask</span>
@@ -351,7 +335,7 @@
         </article>
 
         <!-- Project 3: Student Learning Analytics -->
-        <article class="project-card glass-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
+        <article class="project-card glass-card" data-category="ai" data-repo="logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction" data-aos="fade-up" data-aos-delay="200">
           <div class="project-content">
             <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -360,14 +344,17 @@
                 <path d="M10 12v3M14 12v3"></path>
               </svg></div>
             <h3>Student Learning Analytics</h3>
-            <p>Machine learning project for analyzing student learning patterns, clustering students by behavior, and predicting dropout risk. Features advanced ML algorithms and educational data analysis for institutional analytics.</p>
+            <p>Machine learning project for analyzing student learning patterns, clustering students by behavior, and
+              predicting dropout risk. Features advanced ML algorithms and educational data analysis for institutional
+              analytics.</p>
             <div class="project-tags">
               <span>Python</span>
               <span>Scikit-learn</span>
               <span>Pandas</span>
               <span>ML</span>
             </div>
-            <a href="https://github.com/logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction" target="_blank" rel="noopener" class="project-link">
+            <a href="https://github.com/logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction"
+              target="_blank" rel="noopener" class="project-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -388,7 +375,9 @@
                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
               </svg></div>
             <h3>Exam Seating Automation System</h3>
-            <p>Django-based educational technology platform for automated exam seating allocation. Features student management, room allocation, role-based access control (Admin, Coordinator, Invigilator), fair distribution algorithms, and comprehensive seating plan generation.</p>
+            <p>Django-based educational technology platform for automated exam seating allocation. Features student
+              management, room allocation, role-based access control (Admin, Coordinator, Invigilator), fair
+              distribution algorithms, and comprehensive seating plan generation.</p>
             <div class="project-tags">
               <span>Django</span>
               <span>MySQL</span>
@@ -417,7 +406,9 @@
                 <polyline points="8 6 2 12 8 18"></polyline>
               </svg></div>
             <h3>SLS</h3>
-            <p>Versatile Python project demonstrating software development practices and utilities. Includes modular architecture, clean code principles, and practical functionality for various use cases in development workflows.</p>
+            <p>Versatile Python project demonstrating software development practices and utilities. Includes modular
+              architecture, clean code principles, and practical functionality for various use cases in development
+              workflows.</p>
             <div class="project-tags">
               <span>Python</span>
               <span>Utilities</span>
@@ -444,7 +435,9 @@
                 <circle cx="12" cy="12" r="2"></circle>
               </svg></div>
             <h3>SafeClick</h3>
-            <p>Privacy-first phishing & scam detection browser extension. Features hashed URL analysis, no user accounts required, multi-language support (English, Nepali), and FastAPI backend with Redis caching for enterprise-grade threat detection.</p>
+            <p>Privacy-first phishing & scam detection browser extension. Features hashed URL analysis, no user accounts
+              required, multi-language support (English, Nepali), and FastAPI backend with Redis caching for
+              enterprise-grade threat detection.</p>
             <div class="project-tags">
               <span>JavaScript</span>
               <span>FastAPI</span>
@@ -473,7 +466,9 @@
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg></div>
             <h3>Gurans Sales Management System</h3>
-            <p>Production-ready enterprise sales management platform. Features 6-level RBAC, hierarchical approval workflows, multi-currency pricing tiers, real-time notifications, financial reporting, performance analytics, and comprehensive audit logging with async task queue.</p>
+            <p>Production-ready enterprise sales management platform. Features 6-level RBAC, hierarchical approval
+              workflows, multi-currency pricing tiers, real-time notifications, financial reporting, performance
+              analytics, and comprehensive audit logging with async task queue.</p>
             <div class="project-tags">
               <span>Django 5.0</span>
               <span>PostgreSQL</span>
@@ -594,7 +589,8 @@
             </div>
           </div>
           <div class="social-links-contact">
-            <a href="https://www.linkedin.com/in/ayush-hamal-623b4127b/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+            <a href="https://www.linkedin.com/in/ayush-hamal-623b4127b/" target="_blank" rel="noopener"
+              aria-label="LinkedIn" class="social-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -602,7 +598,8 @@
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" aria-label="GitHub"
+              class="social-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -612,21 +609,20 @@
             </a>
           </div>
         </div>
-        <form class="contact-form glass-card" action="https://formspree.io/f/mqazqjje" method="POST">
-          <input type="hidden" name="_subject" value="New message from Portfolio Website!">
+        <form id="contact-form" class="contact-form glass-card">
           <div class="form-group">
-            <input type="text" id="name" name="name" required placeholder="Your Name" />
+            <input type="text" id="name" name="from_name" required placeholder="Your Name" />
           </div>
           <div class="form-group">
-            <input type="email" id="email" name="email" required placeholder="Your Email" />
+            <input type="email" id="email" name="reply_to" required placeholder="Your Email" />
           </div>
           <div class="form-group">
             <textarea id="message" name="message" rows="5" required placeholder="Project details or message"></textarea>
           </div>
-          <button type="submit" class="submit-btn primary-btn"
+          <button type="submit" id="submit-btn" class="submit-btn primary-btn"
             style="width: 100%; border-radius: var(--border-radius-sm); padding: 12px; background: var(--accent-gradient); color: white; border: none; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s;">
-            Send Message
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            <span class="btn-text">Send Message</span>
+            <svg class="send-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -653,6 +649,10 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
