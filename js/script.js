@@ -289,6 +289,17 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorOutline.style.backgroundColor = 'transparent';
       });
     });
+
+    // Toggle visibility only on click
+    window.addEventListener('mousedown', () => {
+      cursorDot.classList.add('cursor-active');
+      cursorOutline.classList.add('cursor-active');
+    });
+    
+    window.addEventListener('mouseup', () => {
+      cursorDot.classList.remove('cursor-active');
+      cursorOutline.classList.remove('cursor-active');
+    });
   }
 
   // 1.9 Spotlight Hover Effect for Glass Cards
