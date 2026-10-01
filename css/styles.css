@@ -2089,3 +2089,302 @@ footer p {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
   transition: width 0.1s ease-out;
 }
+/* ==========================================================================
+   Hero: current role + quick stats
+   ========================================================================== */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-badges .badge {
+  margin-bottom: 0;
+}
+
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.badge-live:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -6px rgba(16, 185, 129, 0.5);
+}
+
+.live-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #10b981;
+  animation: live-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes live-ping {
+  75%, 100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-value {
+  font-family: 'Outfit', var(--font-sans);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-stat-label {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Section eyebrows
+   ========================================================================== */
+.section-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent-primary);
+}
+
+.section-eyebrow::before {
+  content: '// ';
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   Experience Section
+   ========================================================================== */
+.experience-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.experience-card {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+}
+
+/* Gradient edge on the current role */
+.experience-card.is-current {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+    var(--accent-gradient) border-box;
+}
+
+.experience-logo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  color: #fff;
+  background: var(--accent-gradient);
+  box-shadow: var(--neon-glow);
+}
+
+.experience-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.experience-role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.experience-company {
+  margin-top: 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.experience-type {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.current-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 16px 0 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.experience-meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.experience-meta svg {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.experience-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--text-secondary);
+}
+
+.experience-points li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   General polish
+   ========================================================================== */
+::selection {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.project-tags span {
+  display: inline-block;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.project-tags span:hover {
+  transform: translateY(-2px);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-primary);
+}
+
+.timeline-dot {
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@media screen and (max-width: 768px) {
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-stats {
+    gap: 16px;
+  }
+
+  .hero-stat-value {
+    font-size: 1.7rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .experience-top {
+    flex-direction: column;
+  }
+
+  .experience-role {
+    font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot::after {
+    animation: none;
+  }
+}

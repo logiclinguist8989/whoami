@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ----- Experience durations (kept current automatically) -----
+  // LinkedIn-style count: the start month counts as a full month.
+  function monthsSince(start) {
+    const [year, month] = start.split('-').map(Number);
+    const now = new Date();
+    return Math.max(1, (now.getFullYear() - year) * 12 + (now.getMonth() + 1 - month) + 1);
+  }
+
+  function formatDuration(start) {
+    const total = monthsSince(start);
+    const years = Math.floor(total / 12);
+    const months = total % 12;
+    const parts = [];
+    if (years) parts.push(`${years} yr${years > 1 ? 's' : ''}`);
+    if (months) parts.push(`${months} mo${months > 1 ? 's' : ''}`);
+    return parts.join(' ');
+  }
+
+  document.querySelectorAll('.experience-duration[data-start]').forEach(el => {
+    el.textContent = formatDuration(el.dataset.start);
+  });
+
+  document.querySelectorAll('[data-months-since]').forEach(el => {
+    el.textContent = `${monthsSince(el.dataset.monthsSince)}+`;
+  });
+
 
   // 0. System Boot Preloader
   const preloader = document.getElementById('preloader');
@@ -522,13 +548,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
           switch (baseCommand) {
             case 'help':
-              response = "Available commands:\n  whoami    - Display basic info\n  skills    - List technical skills\n  projects  - Show portfolio projects\n  education - Show academic history\n  socials   - Display social links\n  contact   - Show contact info\n  date      - Display current system time\n  theme     - Toggle light/dark mode\n  echo      - Print text directly\n  clear     - Clear terminal window";
+              response = "Available commands:\n  whoami    - Display basic info\n  skills    - List technical skills\n  work      - Show work experience\n  projects  - Show portfolio projects\n  education - Show academic history\n  socials   - Display social links\n  contact   - Show contact info\n  date      - Display current system time\n  theme     - Toggle light/dark mode\n  echo      - Print text directly\n  clear     - Clear terminal window";
               break;
             case 'whoami':
-              response = "Ayush\nB.Tech Ed IT Student\nFull-Stack & Cybersecurity Enthusiast";
+              response = "Ayush\nB.Tech Ed IT Student\nIT Technician @ Gurans Herbaceuticals\nFull-Stack & Cybersecurity Enthusiast";
               break;
             case 'skills':
               response = "Languages: Python, JavaScript, HTML, CSS, Bash\nFrameworks: Django, FastAPI, React\nTools: Docker, Git, Linux, Burp Suite";
+              break;
+            case 'work':
+            case 'experience':
+              response = `[CURRENT] IT Technician — Gurans Herbaceuticals (Full-time)\n          Dec 2025 – Present · ${formatDuration('2025-12')}\n          Biratnagar, Kosi Zone, Nepal · On-site`;
               break;
             case 'projects':
               response = "Public Projects: PyPortScan, CyberLens, SLS, Student Learning Analytics";
