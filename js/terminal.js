@@ -1913,6 +1913,12 @@
     return;
   }
 
+  // Used on a page without this tool's own UI: just expose the engine
+  if (!document.getElementById('term-linux')) {
+    window.PortfolioShells = api;
+    return;
+  }
+
   // ----- UI -----
 
   const shells = { linux: new LinuxShell(), windows: new WindowsShell() };

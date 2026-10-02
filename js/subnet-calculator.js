@@ -164,6 +164,12 @@
     return;
   }
 
+  // Used on a page without this tool's own UI: just expose the engine
+  if (!document.getElementById('calc-form')) {
+    window.SubnetCalc = api;
+    return;
+  }
+
   // ----- UI -----
 
   const form = document.getElementById('calc-form');
