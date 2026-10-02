@@ -4,778 +4,469 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Hamal — IT Technician &amp; Full-Stack Developer</title>
   <meta name="description"
-    content="Portfolio of Ayush, a B.Tech Ed IT student specializing in Full-Stack Development, Cybersecurity, and Enterprise Systems. Explore 7 projects including SafeClick, Gurans ERP, and more." />
-  <meta name="keywords"
-    content="Full-Stack Developer, Cybersecurity, Python, Django, FastAPI, JavaScript, Enterprise Systems, Educational Technology" />
+    content="Ayush Hamal is an IT Technician at Gurans Herbaceuticals and a B.Tech Ed IT student in Nepal building secure full-stack software with Django, FastAPI and Python. Top 6% on TryHackMe." />
   <meta name="author" content="Ayush Hamal" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
-  <!-- Canonical URL - Update this with your actual domain -->
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://logiclinguist8989.github.io/whoami/" />
+  <meta name="theme-color" content="#0b0d10" />
 
-  <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://logiclinguist8989.github.io/whoami/" />
-  <meta property="og:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
+  <meta property="og:title" content="Ayush Hamal — IT Technician &amp; Full-Stack Developer" />
   <meta property="og:description"
-    content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
+    content="IT Technician by day, secure full-stack builder by night. Projects in cybersecurity, Django and machine learning." />
   <meta property="og:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
-  <meta property="og:site_name" content="Ayush Portfolio" />
+  <meta property="og:site_name" content="Ayush Hamal" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ayush Hamal — IT Technician &amp; Full-Stack Developer" />
+  <meta name="twitter:description"
+    content="IT Technician by day, secure full-stack builder by night. Projects in cybersecurity, Django and machine learning." />
+  <meta name="twitter:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
 
-  <!-- Twitter Card Meta Tags -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://logiclinguist8989.github.io/whoami/" />
-  <meta property="twitter:title" content="Ayush | Full-Stack Developer & Cybersecurity Specialist" />
-  <meta property="twitter:description"
-    content="Explore my portfolio featuring 7 innovative projects in cybersecurity, full-stack development, and enterprise systems." />
-  <meta property="twitter:image" content="https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ayush Hamal",
+    "url": "https://logiclinguist8989.github.io/whoami/",
+    "image": "https://logiclinguist8989.github.io/whoami/assets/images/profile.jpg",
+    "jobTitle": "IT Technician",
+    "worksFor": { "@type": "Organization", "name": "Gurans Herbaceuticals" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Biratnagar", "addressCountry": "NP" },
+    "sameAs": [
+      "https://github.com/logiclinguist8989",
+      "https://www.linkedin.com/in/ayush-hamal-623b4127b/",
+      "https://tryhackme.com/p/ayushhamalthakuri"
+    ]
+  }
+  </script>
 
-  <!-- Additional SEO Meta -->
-  <meta name="language" content="English" />
-  <meta name="revisit-after" content="30 days" />
-  <meta name="theme-color" content="#1e293b" />
-
-  <title>Ayush Hamal| Full-Stack Developer & Cybersecurity Specialist</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <script>
+    // Apply the saved theme before first paint to avoid a flash
+    document.documentElement.classList.add('js');
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) { /* storage unavailable */ }
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <!-- Reading Scroll Progress Bar -->
-  <div class="scroll-progress-wrapper">
-    <div id="scroll-progress" class="scroll-progress-bar"></div>
-  </div>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- System Boot Preloader -->
-  <div id="preloader" class="preloader">
-    <div class="preloader-content">
-      <div id="boot-text" class="boot-text"></div>
-      <div class="boot-cursor">█</div>
-    </div>
-  </div>
-
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
-  <canvas id="matrix-canvas"></canvas>
-  <header>
-    <nav class="navbar" aria-label="Main Navigation">
-      <div class="logo">Ayush<span class="accent">.</span></div>
-      <div class="nav-controls">
-        <button class="theme-toggle" aria-label="Toggle light/dark mode">
-          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main">
+      <a href="#top" class="logo">ayush<span class="accent">.</span>hamal</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
           </svg>
-          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-          <span class="hamburger"></span>
+        <button type="button" class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
         </button>
       </div>
-      <ul class="nav-links">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="tools/subnet-calculator.html" class="nav-link">Tools</a></li>
-        <li><a href="#certifications" class="nav-link">Learning</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero" tabindex="-1">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-        <div class="hero-badges">
-          <div class="badge">B.Tech Ed IT Student</div>
-          <a href="#experience" class="badge badge-live" aria-label="Currently working as IT Technician at Gurans Herbaceuticals">
-            <span class="live-dot" aria-hidden="true"></span>
-            IT Technician @ Gurans Herbaceuticals
-          </a>
-        </div>
-        <h1 class="hero-title">Hi, I'm <span class="glitch-wrapper"><span class="highlight-text glitch"
-              data-text="Ayush">Ayush Hamal</span></span></h1>
-        <h2 class="hero-subtitle">Full-Stack & Cybersecurity Enthusiast</h2>
-        <p class="hero-tagline">
-          Bridging the gap between software development and security. Passionate about building robust systems,
-          dissecting networks, and exploring the frontiers of AI/ML.
-        </p>
-        <div class="cta-buttons">
-          <a href="#projects" class="cta-btn primary">View Projects</a>
-          <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" class="cta-btn secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-              </path>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero wrap" id="top">
+      <div class="hero-text">
+        <a href="#experience" class="status-pill">
+          <span class="live-dot" aria-hidden="true"></span>
+          Currently IT Technician @ Gurans Herbaceuticals
+        </a>
+        <h1>Ayush Hamal</h1>
+        <p class="hero-pitch">I keep systems running by day and build <strong>secure full-stack software</strong> by
+          night.</p>
+        <p class="hero-sub">B.Tech Ed IT student in Nepal working across full-stack development, cybersecurity and
+          AI/ML — from Django back-ends to network scanners.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View projects
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
             </svg>
-            View GitHub
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <dl class="hero-stats">
+          <div>
+            <dt>In industry</dt>
+            <dd><span data-months-since="2025-12">11</span> mo</dd>
+          </div>
+          <div>
+            <dt>Projects</dt>
+            <dd>7</dd>
+          </div>
+          <div>
+            <dt>TryHackMe</dt>
+            <dd>Top 6%</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/images/profile.jpg" alt="Portrait of Ayush Hamal" width="400" height="500" />
+        <figcaption>
+          <span>Biratnagar, Nepal</span>
+          <span class="accent">open to collaborate</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="wrap split">
+        <div class="section-head">
+          <p class="eyebrow">01 / About</p>
+          <h2>Builder with a security mindset.</h2>
+        </div>
+        <div class="prose">
+          <p>I'm a B.Tech Ed IT student with a deep-rooted passion for technology. My journey started with programming
+            fundamentals and quickly turned into a fascination with how systems communicate — and how they can be
+            secured.</p>
+          <p>Today I work as an IT Technician at Gurans Herbaceuticals while building software on the side: enterprise
+            Django systems, security tooling and machine-learning experiments. I enjoy Linux, CTFs and problems that
+            don't have a tutorial yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-alt" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">02 / Experience</p>
+          <h2>Where I work &amp; study</h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-when">
+              <span class="when">Dec 2025 — Present</span>
+              <span class="when-sub"><span class="experience-duration" data-start="2025-12">11 mos</span> ·
+                Full-time</span>
+              <span class="tag-current"><span class="live-dot" aria-hidden="true"></span>Current</span>
+            </div>
+            <div class="timeline-what">
+              <h3>IT Technician</h3>
+              <p class="org">Gurans Herbaceuticals · Biratnagar, Kosi Zone, Nepal · On-site</p>
+              <p>Keeping day-to-day IT running on site for the company's staff and systems.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-when">
+              <span class="when">Undergraduate</span>
+              <span class="when-sub">Education · Ongoing</span>
+            </div>
+            <div class="timeline-what">
+              <h3>B.Tech in Educational Information Technology</h3>
+              <p>Software engineering, networking and pedagogy — the bridge between building technology and teaching
+                it.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">03 / Projects</p>
+            <h2>Selected work</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter" data-filter="security" aria-pressed="false">Security</button>
+            <button type="button" class="filter" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
+            <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI/ML</button>
+            <button type="button" class="filter" data-filter="enterprise" aria-pressed="false">Enterprise</button>
+          </div>
+        </div>
+
+        <article class="featured" data-category="enterprise fullstack">
+          <div class="featured-facts">
+            <p class="label">What it handles</p>
+            <ul>
+              <li><strong>6-level</strong><span>role-based access control</span></li>
+              <li><strong>Multi-step</strong><span>hierarchical approvals</span></li>
+              <li><strong>Multi-currency</strong><span>pricing tiers</span></li>
+              <li><strong>Full</strong><span>audit logging &amp; reports</span></li>
+            </ul>
+          </div>
+          <div class="featured-body">
+            <p class="label accent">Featured · Enterprise</p>
+            <h3>Gurans Sales Management System</h3>
+            <p>Production enterprise sales platform with 6-level RBAC, hierarchical approval workflows, multi-currency
+              pricing tiers, real-time notifications, financial reporting and full audit logging on an async task
+              queue.</p>
+            <p class="stack">Django 5.0 · PostgreSQL · Celery</p>
+            <a href="#contact" class="text-link">Proprietary — ask me for a walkthrough
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project" data-category="security">
+            <p class="label">Security</p>
+            <h3>SafeClick</h3>
+            <p>Privacy-first phishing &amp; scam detection browser extension: hashed URL analysis, no accounts, English
+              and Nepali, FastAPI + Redis back-end.</p>
+            <p class="stack">JavaScript · FastAPI · Redis</p>
+            <span class="muted-link">Private repository</span>
+          </article>
+
+          <article class="project" data-category="security">
+            <p class="label">Security</p>
+            <h3>CyberLens</h3>
+            <p>Network monitoring and vulnerability dashboard with ARP device discovery, port scanning, security alerts
+              and Docker deployment.</p>
+            <p class="stack">Python · Flask · Docker</p>
+            <span class="muted-link">Private repository</span>
+          </article>
+
+          <article class="project" data-category="ai">
+            <p class="label">AI/ML</p>
+            <h3>Student Learning Analytics</h3>
+            <p>Clusters students by learning behaviour and predicts dropout risk from LMS data for institutional
+              analytics.</p>
+            <p class="stack">Python · scikit-learn · Pandas</p>
+            <a class="text-link"
+              href="https://github.com/logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction"
+              target="_blank" rel="noopener">View repository ↗</a>
+          </article>
+
+          <article class="project" data-category="fullstack">
+            <p class="label">Full-Stack · Education</p>
+            <h3>Exam Seating Automation</h3>
+            <p>Django platform that allocates exam seating fairly, with role-based access for admins, coordinators and
+              invigilators.</p>
+            <p class="stack">Django · MySQL · Bootstrap 5</p>
+            <span class="muted-link">Private repository</span>
+          </article>
+
+          <article class="project" data-category="security">
+            <p class="label">Security</p>
+            <h3>PyPortScan</h3>
+            <p>Python port scanner that finds open ports and reports detailed results for security auditing and
+              reconnaissance.</p>
+            <p class="stack">Python · Networking</p>
+            <a class="text-link" href="https://github.com/logiclinguist8989/PyPortScan" target="_blank"
+              rel="noopener">View repository ↗</a>
+          </article>
+
+          <article class="project" data-category="fullstack">
+            <p class="label">Full-Stack</p>
+            <h3>SLS</h3>
+            <p>Python utilities project built around a modular architecture and clean-code principles for everyday
+              development workflows.</p>
+            <p class="stack">Python</p>
+            <a class="text-link" href="https://github.com/logiclinguist8989/SLS" target="_blank" rel="noopener">View
+              repository ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section section-alt" id="tools">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">04 / Tools</p>
+          <h2>Try something I built</h2>
+        </div>
+        <a class="tool-card" href="tools/subnet-calculator.html">
+          <div class="tool-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="8" height="8" rx="1"></rect>
+              <rect x="14" y="14" width="8" height="8" rx="1"></rect>
+              <path d="M6 10v4a2 2 0 0 0 2 2h6"></path>
+            </svg>
+          </div>
+          <div class="tool-text">
+            <h3>IPv4 Subnet Calculator</h3>
+            <p>Network and broadcast address, host range, masks, a colour-coded binary breakdown and subnet splitting —
+              all in your browser.</p>
+          </div>
+          <span class="tool-cta">Open tool
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Toolkit + Learning -->
+    <section class="section" id="learning">
+      <div class="wrap two-col">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">05 / Toolkit</p>
+            <h2>What I work with</h2>
+          </div>
+          <dl class="toolkit">
+            <div>
+              <dt>Programming</dt>
+              <dd>Python · JavaScript · Bash · C/C++</dd>
+            </div>
+            <div>
+              <dt>Full-Stack</dt>
+              <dd>Django · FastAPI · Flask · React · PostgreSQL · MySQL · Redis · Celery</dd>
+            </div>
+            <div>
+              <dt>Security &amp; Systems</dt>
+              <dd>Network security · Pentesting · Burp Suite · Linux hardening · Docker · Git</dd>
+            </div>
+            <div>
+              <dt>AI/ML</dt>
+              <dd>Pandas · scikit-learn · clustering · classification</dd>
+            </div>
+          </dl>
+        </div>
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">06 / Learning</p>
+            <h2>Always in a lab</h2>
+          </div>
+          <article class="thm">
+            <div class="thm-head">
+              <div>
+                <h3>TryHackMe</h3>
+                <p class="mono muted">ayushhamalthakuri · [0x9][MAGE]</p>
+              </div>
+              <span class="pill">Top 6%</span>
+            </div>
+            <dl class="thm-stats">
+              <div>
+                <dt>Rooms</dt>
+                <dd>100</dd>
+              </div>
+              <div>
+                <dt>Badges</dt>
+                <dd>14</dd>
+              </div>
+              <div>
+                <dt>Global rank</dt>
+                <dd>138,581</dd>
+              </div>
+            </dl>
+            <ul class="badges">
+              <li class="badge-epic">AI Odyssey · Epic 0.8%</li>
+              <li>Advent of Cyber 2025</li>
+              <li>90-day streak</li>
+              <li>Bronze League · 1st</li>
+              <li>Security Awareness</li>
+              <li>Networking Nerd</li>
+            </ul>
+            <a class="text-link" href="https://tryhackme.com/p/ayushhamalthakuri" target="_blank" rel="noopener">View
+              TryHackMe profile ↗</a>
+          </article>
+          <ul class="learning-list">
+            <li>
+              <h3>Linux server administration</h3>
+              <p>Ubuntu &amp; CentOS labs · UFW/iptables · SSH hardening · permissions</p>
+            </li>
+            <li>
+              <h3>AI/ML foundations</h3>
+              <p>Academic coursework and self-paced study in data processing and modelling</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="wrap contact">
+        <div>
+          <p class="eyebrow">07 / Contact</p>
+          <h2 class="contact-title">Let's build something secure.</h2>
+          <p class="contact-sub">Open to freelance work, collaborations and interesting problems. I usually reply
+            within a couple of days.</p>
+          <a href="mailto:ayushhamal.aspire.ku@gmail.com" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+            Email me
           </a>
         </div>
-        <ul class="hero-stats" aria-label="Quick stats">
+        <ul class="contact-links">
           <li>
-            <span class="hero-stat-value" data-months-since="2025-12">11+</span>
-            <span class="hero-stat-label">Months in industry</span>
+            <a href="mailto:ayushhamal.aspire.ku@gmail.com">
+              <span class="contact-label">Email</span>
+              <span>ayushhamal.aspire.ku@gmail.com</span>
+            </a>
           </li>
           <li>
-            <span class="hero-stat-value">7</span>
-            <span class="hero-stat-label">Projects shipped</span>
+            <a href="https://www.linkedin.com/in/ayush-hamal-623b4127b/" target="_blank" rel="noopener">
+              <span class="contact-label">LinkedIn</span>
+              <span>ayush-hamal ↗</span>
+            </a>
           </li>
           <li>
-            <span class="hero-stat-value">3</span>
-            <span class="hero-stat-label">Core domains</span>
+            <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener">
+              <span class="contact-label">GitHub</span>
+              <span>logiclinguist8989 ↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://tryhackme.com/p/ayushhamalthakuri" target="_blank" rel="noopener">
+              <span class="contact-label">TryHackMe</span>
+              <span>ayushhamalthakuri ↗</span>
+            </a>
           </li>
         </ul>
-      </div>
-      <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-        <div class="glass-card profile-card">
-          <div class="profile-placeholder">
-            <img src="assets/images/profile.jpg" alt="Ayush Hamal — Full-Stack Developer" class="profile-image">
-          </div>
-          <div class="floating-badge badge-1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            Security
-          </div>
-          <div class="floating-badge badge-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            Code
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Terminal Section -->
-    <section id="terminal" class="terminal section" tabindex="-1">
-      <div class="terminal-container glass-card" data-aos="fade-up">
-        <div class="terminal-header">
-          <div class="terminal-buttons">
-            <span class="close"></span>
-            <span class="minimize"></span>
-            <span class="maximize"></span>
-          </div>
-          <div class="terminal-title">guest@ayush-portfolio:~</div>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-          <p class="terminal-prompt">Welcome to Ayush OS v1.0.0</p>
-          <p class="terminal-response">Type 'help' to see available commands.</p>
-          <div class="terminal-input-line">
-            <span class="terminal-prefix">guest@ayush-portfolio:~$</span>
-            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false"
-              autofocus>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">Who I am</span>
-        <h2>About Me</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="about-container">
-        <div class="about-text" data-aos="fade-right">
-          <p class="bio">
-            I am a B.Tech Ed IT student with a deep-rooted passion for technology. My journey started with programming
-            fundamentals and quickly evolved into a fascination with how systems communicate and how they can be
-            secured.
-          </p>
-          <p class="bio">
-            Currently, I'm focusing my learning around <strong>Full-Stack Development</strong>,
-            <strong>Cybersecurity</strong>, and <strong>AI/ML</strong>. I thrive on problem-solving, exploring Linux
-            environments, and participating in CTFs. My ultimate goal is to continuously learn, build secure
-            applications, and contribute meaningfully to the tech community.
-          </p>
-        </div>
-        <div class="about-stats glass-panel" data-aos="fade-left">
-          <div class="stat-item">
-            <span class="stat-icon">🎓</span>
-            <div class="stat-info">
-              <h3>B.Tech Ed IT</h3>
-              <p>Undergraduate</p>
-            </div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-icon">💼</span>
-            <div class="stat-info">
-              <h3>IT Technician</h3>
-              <p>Gurans Herbaceuticals</p>
-            </div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-icon">🌍</span>
-            <div class="stat-info">
-              <h3>Nepal</h3>
-              <p>Based In</p>
-            </div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-icon">💡</span>
-            <div class="stat-info">
-              <h3>Continuous</h3>
-              <p>Learning & Growth</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">Where I work</span>
-        <h2>Experience</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="experience-list">
-        <article class="experience-card glass-card is-current" data-aos="fade-up" data-aos-delay="100">
-          <div class="experience-logo" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </div>
-          <div class="experience-body">
-            <div class="experience-top">
-              <div>
-                <h3 class="experience-role">IT Technician</h3>
-                <p class="experience-company">Gurans Herbaceuticals <span class="experience-type">· Full-time</span></p>
-              </div>
-              <span class="current-pill"><span class="live-dot" aria-hidden="true"></span>Current</span>
-            </div>
-            <ul class="experience-meta">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>Dec 2025 – Present · <span class="experience-duration" data-start="2025-12">11 mos</span></span>
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Biratnagar, Kosi Zone, Nepal · On-site</span>
-              </li>
-            </ul>
-            <ul class="experience-points">
-              <li>Provide day-to-day IT support for staff — troubleshooting hardware, software and network issues.</li>
-              <li>Maintain workstations, printers and the office network to keep operations running smoothly.</li>
-              <li>Support the internal business systems used across sales and operations.</li>
-            </ul>
-            <div class="project-tags">
-              <span>IT Support</span>
-              <span>Networking</span>
-              <span>Hardware</span>
-              <span>Systems Administration</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">What I use</span>
-        <h2>Technical Arsenal</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="skills-container glass-card" data-aos="zoom-in">
-        <div class="radar-chart-wrapper">
-          <canvas id="skillsRadarChart"></canvas>
-        </div>
-        <div class="skills-legend">
-          <div class="legend-item" data-aos="fade-left" data-aos-delay="100">
-            <span class="dot programming"></span>
-            <div class="legend-text">
-              <h4>Programming</h4>
-              <p>Python, JavaScript, Bash, C/C++</p>
-            </div>
-          </div>
-          <div class="legend-item" data-aos="fade-left" data-aos-delay="200">
-            <span class="dot security"></span>
-            <div class="legend-text">
-              <h4>Cybersecurity</h4>
-              <p>Network Security, CTFs, Pentesting</p>
-            </div>
-          </div>
-          <div class="legend-item" data-aos="fade-left" data-aos-delay="300">
-            <span class="dot fullstack"></span>
-            <div class="legend-text">
-              <h4>Full-Stack</h4>
-              <p>Django, FastAPI, React, SQL</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">What I've built</span>
-        <h2>Featured Projects</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="project-filters" data-aos="fade-up" data-aos-delay="50">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="security">Security</button>
-        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-        <button class="filter-btn" data-filter="ai">AI/ML</button>
-        <button class="filter-btn" data-filter="education">Education Tech</button>
-        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1: PyPortScan -->
-        <article class="project-card glass-card" data-category="security" data-repo="logiclinguist8989/PyPortScan" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v18M3 12h18"></path>
-                <circle cx="12" cy="12" r="9"></circle>
-              </svg></div>
-            <h3>PyPortScan</h3>
-            <p>Advanced port scanning tool written in Python. Efficiently scans networks and identifies open ports with
-              detailed analysis for security auditing and network reconnaissance.</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>Port Scanning</span>
-              <span>Security</span>
-            </div>
-            <a href="https://github.com/logiclinguist8989/PyPortScan" target="_blank" rel="noopener"
-              class="project-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Repository
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 2: CyberLens -->
-        <article class="project-card glass-card" data-category="security" data-repo="logiclinguist8989/CyberLens" data-aos="fade-up" data-aos-delay="150">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg></div>
-            <h3>CyberLens</h3>
-            <p>Production-ready network monitoring and vulnerability dashboard. Features real-time system monitoring,
-              ARP-based device discovery, port scanning, security alerts, and Docker containerization for enterprise
-              deployment.</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>Flask</span>
-              <span>Docker</span>
-              <span>Security</span>
-            </div>
-            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
-              data-toast="Private Repository - Contact for access">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Project (Private)
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 3: Student Learning Analytics -->
-        <article class="project-card glass-card" data-category="ai" data-repo="logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="21 8 21 21 3 21 3 8"></polyline>
-                <line x1="1" y1="3" x2="23" y2="3"></line>
-                <path d="M10 12v3M14 12v3"></path>
-              </svg></div>
-            <h3>Student Learning Analytics</h3>
-            <p>Machine learning project for analyzing student learning patterns, clustering students by behavior, and
-              predicting dropout risk. Features advanced ML algorithms and educational data analysis for institutional
-              analytics.</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>Scikit-learn</span>
-              <span>Pandas</span>
-              <span>ML</span>
-            </div>
-            <a href="https://github.com/logiclinguist8989/Student-Learning-Analytics-for-LMS-Clustering-and-Dropout-Prediction"
-              target="_blank" rel="noopener" class="project-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Repository
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 4: Exam Seating Automation -->
-        <article class="project-card glass-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="250">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-              </svg></div>
-            <h3>Exam Seating Automation System</h3>
-            <p>Django-based educational technology platform for automated exam seating allocation. Features student
-              management, room allocation, role-based access control (Admin, Coordinator, Invigilator), fair
-              distribution algorithms, and comprehensive seating plan generation.</p>
-            <div class="project-tags">
-              <span>Django</span>
-              <span>MySQL</span>
-              <span>Bootstrap 5</span>
-              <span>Education</span>
-            </div>
-            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
-              data-toast="Private Repository - Contact for access">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Project (Private)
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 5: SLS -->
-        <article class="project-card glass-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg></div>
-            <h3>SLS</h3>
-            <p>Versatile Python project demonstrating software development practices and utilities. Includes modular
-              architecture, clean code principles, and practical functionality for various use cases in development
-              workflows.</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>Utilities</span>
-              <span>Development</span>
-            </div>
-            <a href="https://github.com/logiclinguist8989/SLS" target="_blank" rel="noopener" class="project-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Repository
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 6: SafeClick -->
-        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="350">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <circle cx="12" cy="12" r="2"></circle>
-              </svg></div>
-            <h3>SafeClick</h3>
-            <p>Privacy-first phishing & scam detection browser extension. Features hashed URL analysis, no user accounts
-              required, multi-language support (English, Nepali), and FastAPI backend with Redis caching for
-              enterprise-grade threat detection.</p>
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>FastAPI</span>
-              <span>Browser Extension</span>
-              <span>Security</span>
-            </div>
-            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
-              data-toast="Private Repository - Contact for access">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Project (Private)
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 7: Gurans Sales Management -->
-        <article class="project-card glass-card" data-category="enterprise" data-aos="fade-up" data-aos-delay="400">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg></div>
-            <h3>Gurans Sales Management System</h3>
-            <p>Production-ready enterprise sales management platform. Features 6-level RBAC, hierarchical approval
-              workflows, multi-currency pricing tiers, real-time notifications, financial reporting, performance
-              analytics, and comprehensive audit logging with async task queue.</p>
-            <div class="project-tags">
-              <span>Django 5.0</span>
-              <span>PostgreSQL</span>
-              <span>Celery</span>
-              <span>Enterprise</span>
-            </div>
-            <a href="#" target="_blank" rel="noopener" class="project-link notify-placeholder"
-              data-toast="Proprietary System - Contact for details">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              View Project (Proprietary)
-            </a>
-          </div>
-        </article>
-
-        <!-- Tool: Subnet Calculator -->
-        <article class="project-card glass-card" data-category="security" data-aos="fade-up" data-aos-delay="450">
-          <div class="project-content">
-            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="8" height="8" rx="1"></rect>
-                <rect x="14" y="14" width="8" height="8" rx="1"></rect>
-                <path d="M6 10v4a2 2 0 0 0 2 2h6"></path>
-              </svg></div>
-            <h3>IPv4 Subnet Calculator</h3>
-            <p>Live tool you can use right here: enter any IP and CIDR to get the network and broadcast address, host
-              range, masks, a colour-coded binary breakdown and a subnet-splitting table. Runs fully in the browser.</p>
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>Networking</span>
-              <span>Live Tool</span>
-            </div>
-            <a href="tools/subnet-calculator.html" class="project-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17L17 7"></path>
-                <path d="M8 7h9v9"></path>
-              </svg>
-              Open Tool
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Certifications & Learning -->
-    <section id="certifications" class="certifications section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">How I grow</span>
-        <h2>Continuous Learning</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="timeline" data-aos="fade-up">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <h3>Cybersecurity Fundamentals</h3>
-            <p class="timeline-date">Ongoing</p>
-            <p>Engaging in platforms like TryHackMe and HackTheBox to build practical skills in enumeration,
-              exploitation, and privilege escalation.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <h3>Linux Server Administration</h3>
-            <p class="timeline-date">Self-Taught Labs</p>
-            <p>Configuring and securing local virtual machines running Ubuntu and CentOS. Implementing firewall rules
-              (UFW/iptables), SSH hardening, and user permissions.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <h3>AI/ML Foundational Learning</h3>
-            <p class="timeline-date">Academic & Independent</p>
-            <p>Exploring the core concepts of artificial intelligence, data processing with Pandas, and model building
-              through academic assignments and self-paced courses.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog / Research (Optional) -->
-    <section id="blog" class="blog section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">What I write</span>
-        <h2>Technical Write-ups</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="blog-grid">
-        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="100">
-          <span class="blog-category">Linux</span>
-          <h3>Securing Your First VPS</h3>
-          <p>A beginner's guide to the first 10 steps you should take immediately after spinning up a new Linux server.
-          </p>
-          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
-            <span>&rarr;</span></a>
-        </div>
-        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="200">
-          <span class="blog-category">Networking</span>
-          <h3>Understanding TCP/IP via Wireshark</h3>
-          <p>Analyzing a typical HTTP request layer-by-layer to demystify how packets traverse the internet.</p>
-          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
-            <span>&rarr;</span></a>
-        </div>
-        <div class="blog-card glass-card" data-aos="fade-up" data-aos-delay="300">
-          <span class="blog-category">Cybersecurity</span>
-          <h3>The Anatomy of SQL Injection</h3>
-          <p>Breaking down how poorly sanitized inputs lead to database breaches, and how to defend against them.</p>
-          <a href="#" class="read-more notify-placeholder" data-toast="Opening technical write-up...">Read Article
-            <span>&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section" tabindex="-1">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-eyebrow">Say hello</span>
-        <h2>Get In Touch</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="contact-container" data-aos="fade-up">
-        <div class="contact-info glass-card">
-          <h3>Let's Connect</h3>
-          <p>I'm currently looking for new opportunities, internships, and collaborative projects. Whether you have a
-            question or just want to say hi, I'll try my best to get back to you!</p>
-          <div class="info-list">
-            <div class="info-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span>ayushhamal.aspire.ku@gmail.com</span>
-            </div>
-            <div class="info-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>Nepal</span>
-            </div>
-          </div>
-          <div class="social-links-contact">
-            <a href="https://www.linkedin.com/in/ayush-hamal-623b4127b/" target="_blank" rel="noopener"
-              aria-label="LinkedIn" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a href="https://github.com/logiclinguist8989" target="_blank" rel="noopener" aria-label="GitHub"
-              class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <form id="contact-form" class="contact-form glass-card">
-          <div class="form-group">
-            <input type="text" id="name" name="from_name" required placeholder="Your Name" />
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="reply_to" required placeholder="Your Email" />
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" rows="5" required placeholder="Project details or message"></textarea>
-          </div>
-          <button type="submit" id="submit-btn" class="submit-btn primary-btn"
-            style="width: 100%; border-radius: var(--border-radius-sm); padding: 12px; background: var(--accent-gradient); color: white; border: none; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s;">
-            <span class="btn-text">Send Message</span>
-            <svg class="send-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
-        </form>
       </div>
     </section>
   </main>
 
-  <button class="scroll-top" aria-label="Scroll to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-
-  <div id="toast" class="toast hidden"></div>
-
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2026 Ayush. Built with passion and coffee.</p>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>&copy; <span id="year">2026</span> Ayush Hamal</span>
+      <span>Biratnagar, Nepal</span>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

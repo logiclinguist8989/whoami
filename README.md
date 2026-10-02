@@ -75,10 +75,14 @@ whoami/
 ├── README.md                   # This file
 │
 ├── css/
-│   └── styles.css              # All styling (1800+ lines, responsive)
+│   └── styles.css              # Site styling (design tokens, light/dark, responsive)
 │
 ├── js/
-│   └── script.js               # All interactivity & animations
+│   ├── script.js               # Theme toggle, mobile nav, project filter, live durations
+│   └── subnet-calculator.js    # Subnet calculator logic
+│
+├── tools/
+│   └── subnet-calculator.html  # IPv4 subnet calculator tool page
 │
 ├── assets/
 │   ├── images/
