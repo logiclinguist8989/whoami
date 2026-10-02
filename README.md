@@ -79,10 +79,14 @@ whoami/
 │
 ├── js/
 │   ├── script.js               # Theme toggle, mobile nav, project filter, live durations
-│   └── subnet-calculator.js    # Subnet calculator logic
+│   ├── subnet-calculator.js    # Subnet calculator logic
+│   └── terminal.js             # Simulated Linux (bash) & Windows (CMD) shells
 │
 ├── tools/
-│   └── subnet-calculator.html  # IPv4 subnet calculator tool page
+│   ├── subnet-calculator.html  # IPv4 subnet calculator tool page
+│   └── terminal.html           # Linux & Windows terminal tool page
+│
+├── tests/                      # Run with: node tests/<name>.test.js
 │
 ├── assets/
 │   ├── images/

@@ -674,6 +674,12 @@ img { max-width: 100%; display: block; }
 .is-hidden { display: none !important; }
 
 /* Tools */
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .tool-card {
   display: flex;
   align-items: center;

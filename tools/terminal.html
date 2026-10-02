@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux &amp; Windows Terminal | Ayush Hamal</title>
+  <meta name="description"
+    content="Practice Linux (bash) and Windows (CMD) commands in a safe simulated terminal: files, pipes, grep/findstr, networking, processes and a Linux-to-Windows cheat sheet. Runs entirely in your browser." />
+  <meta name="author" content="Ayush Hamal" />
+  <link rel="canonical" href="https://logiclinguist8989.github.io/whoami/tools/terminal.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Linux & Windows Terminal Simulator — Ayush Hamal" />
+  <meta property="og:description" content="Practice bash and CMD commands side by side in a safe, simulated terminal." />
+  <meta property="og:url" content="https://logiclinguist8989.github.io/whoami/tools/terminal.html" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) { /* storage unavailable */ }
+  </script>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #12161b;
+      --surface-2: #0e1115;
+      --line: #222932;
+      --text: #ecebe4;
+      --muted: #9ba3ad;
+      --accent: #3ddc97;
+      --accent-soft: rgba(61, 220, 151, 0.12);
+      --on-accent: #0b0d10;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --display: 'Space Grotesk', system-ui, sans-serif;
+      --radius: 14px;
+    }
+
+    :root[data-theme='light'] {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --surface-2: #f2f2ed;
+      --line: #e3e3dc;
+      --text: #15171a;
+      --muted: #5f656d;
+      --accent: #047857;
+      --accent-soft: rgba(4, 120, 87, 0.1);
+      --on-accent: #ffffff;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme='dark']) {
+        --bg: #fafaf7;
+        --surface: #ffffff;
+        --surface-2: #f2f2ed;
+        --line: #e3e3dc;
+        --text: #15171a;
+        --muted: #5f656d;
+        --accent: #047857;
+        --accent-soft: rgba(4, 120, 87, 0.1);
+        --on-accent: #ffffff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header { border-bottom: 1px solid var(--line); }
+
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back:hover { color: var(--text); }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .eyebrow {
+      margin: 48px 0 8px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1, h2 { font-family: var(--display); }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .lede {
+      margin: 0 0 28px;
+      max-width: 680px;
+      color: var(--muted);
+    }
+
+    /* ----- Tabs ----- */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: 500 0.95rem var(--sans);
+      cursor: pointer;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab[aria-selected='true'] {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--text);
+    }
+
+    /* ----- Terminal window (always dark, like a real terminal) ----- */
+    .term-pane {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #2a323c;
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+    }
+
+    .term-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: #b4bcc6;
+      background: #1b2027;
+      border-bottom: 1px solid #2a323c;
+    }
+
+    .dots { display: flex; gap: 6px; }
+
+    .dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #3a434e;
+    }
+
+    .term-pane[data-os='linux'] .dots span:nth-child(1) { background: #ff5f57; }
+    .term-pane[data-os='linux'] .dots span:nth-child(2) { background: #febc2e; }
+    .term-pane[data-os='linux'] .dots span:nth-child(3) { background: #28c840; }
+
+    .term-pane[data-os='windows'] .term-titlebar {
+      justify-content: space-between;
+      background: #1f1f1f;
+    }
+
+    .win-controls {
+      display: flex;
+      gap: 18px;
+      color: #8a929c;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+    }
+
+    .term-body {
+      height: 460px;
+      overflow-y: auto;
+      padding: 14px 16px 18px;
+      font-family: var(--mono);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      cursor: text;
+    }
+
+    .term-pane[data-os='linux'] .term-body { background: #0f1115; color: #d7dde3; }
+    .term-pane[data-os='windows'] .term-body { background: #0c0c0c; color: #cccccc; }
+
+    .term-line {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .term-banner { color: #8a929c; margin-bottom: 8px; }
+    .term-err { color: #ff8a8a; }
+
+    .term-pane[data-os='windows'] .term-echo:not(:first-child) { margin-top: 1em; }
+
+    .p-user { color: #3ddc97; font-weight: 700; }
+    .term-pane[data-os='linux'] .p-path { color: #5ab0ff; font-weight: 700; }
+
+    .term-input-line {
+      display: flex;
+      align-items: baseline;
+      margin: 0;
+    }
+
+    .term-pane[data-os='windows'] .term-input-line { margin-top: 1em; }
+
+    .term-prompt { white-space: pre; flex-shrink: 0; }
+
+    .term-input {
+      flex: 1;
+      min-width: 40px;
+      padding: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      caret-color: #3ddc97;
+    }
+
+    .term-input:focus-visible { outline: none; }
+
+    .term-pane:focus-within { border-color: var(--accent); }
+
+    .term-body::-webkit-scrollbar { width: 10px; }
+    .term-body::-webkit-scrollbar-thumb { background: #2a323c; border-radius: 10px; }
+
+    /* ----- Quick commands ----- */
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    .chip:hover { border-color: var(--accent); }
+
+    .shortcuts {
+      margin: 14px 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    kbd {
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      border-bottom-width: 2px;
+      border-radius: 5px;
+      background: var(--surface);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    /* ----- Cheat sheet ----- */
+    section { margin-top: 56px; }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 1.6rem;
+    }
+
+    .section-lede {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    thead th {
+      background: var(--surface-2);
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    tbody tr { border-top: 1px solid var(--line); }
+
+    tbody th {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .try {
+      min-height: 36px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: var(--surface-2);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .try:hover { border-color: var(--accent); }
+
+    .about {
+      margin: 48px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      .term-body {
+        height: 62vh;
+        font-size: 0.8rem;
+        padding: 12px;
+      }
+
+      .tabs .tab { flex: 1; justify-content: center; }
+      .win-controls { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <a href="../index.html" class="logo">ayush<span>.</span>hamal</a>
+      <a href="../index.html#tools" class="back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5"></path>
+          <path d="M11 18l-6-6 6-6"></path>
+        </svg>
+        Back to portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">// Tools</p>
+    <h1>Linux &amp; Windows Terminal</h1>
+    <p class="lede">Practise real commands safely. Switch between a <strong>Linux (bash)</strong> shell and a
+      <strong>Windows (CMD)</strong> prompt, each with its own files, users and processes. Type a command from the
+      other system and it will tell you the equivalent. Everything is simulated in your browser — nothing touches a
+      real computer.</p>
+
+    <div id="terminal-top">
+      <div class="tabs" role="tablist" aria-label="Choose a shell">
+        <button type="button" class="tab" role="tab" id="tab-linux" data-os="linux" aria-controls="term-linux"
+          aria-selected="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 17l6-6-6-6M12 19h8"></path>
+          </svg>
+          Linux (bash)
+        </button>
+        <button type="button" class="tab" role="tab" id="tab-windows" data-os="windows" aria-controls="term-windows"
+          aria-selected="false" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <path d="M7 9l3 3-3 3M12 15h5"></path>
+          </svg>
+          Windows (CMD)
+        </button>
+      </div>
+
+      <div class="term-pane" id="term-linux" data-os="linux" role="tabpanel" aria-labelledby="tab-linux">
+        <div class="term-titlebar">
+          <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span data-title="linux">guest@portfolio: ~</span>
+        </div>
+        <div class="term-body">
+          <div class="term-output" role="log" aria-live="polite" aria-label="Linux terminal output"></div>
+          <form class="term-input-line" autocomplete="off">
+            <span class="term-prompt" aria-hidden="true"></span>
+            <input class="term-input" type="text" aria-label="Linux command" autocomplete="off" autocapitalize="off"
+              autocorrect="off" spellcheck="false" enterkeyhint="send" />
+          </form>
+        </div>
+      </div>
+
+      <div class="term-pane" id="term-windows" data-os="windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
+        <div class="term-titlebar">
+          <span data-title="windows">Command Prompt</span>
+          <span class="win-controls" aria-hidden="true"><span>—</span><span>☐</span><span>✕</span></span>
+        </div>
+        <div class="term-body">
+          <div class="term-output" role="log" aria-live="polite" aria-label="Windows command prompt output"></div>
+          <form class="term-input-line" autocomplete="off">
+            <span class="term-prompt" aria-hidden="true"></span>
+            <input class="term-input" type="text" aria-label="Windows command" autocomplete="off" autocapitalize="off"
+              autocorrect="off" spellcheck="false" enterkeyhint="send" />
+          </form>
+        </div>
+      </div>
+
+      <div class="quick" data-chips="linux">
+        <span>Try:</span>
+        <button type="button" class="chip" data-run="help">help</button>
+        <button type="button" class="chip" data-run="ls -la">ls -la</button>
+        <button type="button" class="chip" data-run="cat ~/about.txt">cat ~/about.txt</button>
+        <button type="button" class="chip" data-run="grep -i failed /var/log/auth.log">grep -i failed /var/log/auth.log</button>
+        <button type="button" class="chip" data-run="cat ~/skills.txt | sort | head -n 5">cat ~/skills.txt | sort | head -n 5</button>
+        <button type="button" class="chip" data-run="ip a">ip a</button>
+        <button type="button" class="chip" data-run="neofetch">neofetch</button>
+      </div>
+      <div class="quick" data-chips="windows" hidden>
+        <span>Try:</span>
+        <button type="button" class="chip" data-run="help">help</button>
+        <button type="button" class="chip" data-run="dir">dir</button>
+        <button type="button" class="chip" data-run="type %USERPROFILE%\Documents\about.txt">type %USERPROFILE%\Documents\about.txt</button>
+        <button type="button" class="chip" data-run="tasklist | findstr exe">tasklist | findstr exe</button>
+        <button type="button" class="chip" data-run="tree %USERPROFILE% /f">tree %USERPROFILE% /f</button>
+        <button type="button" class="chip" data-run="ipconfig /all">ipconfig /all</button>
+        <button type="button" class="chip" data-run="systeminfo">systeminfo</button>
+      </div>
+      <p class="shortcuts"><kbd>↑</kbd> <kbd>↓</kbd> history · <kbd>Tab</kbd> complete · <kbd>Ctrl</kbd>+<kbd>L</kbd>
+        clear · <kbd>Ctrl</kbd>+<kbd>C</kbd> cancel line</p>
+    </div>
+
+    <section aria-labelledby="cheat-title">
+      <h2 id="cheat-title">Linux ↔ Windows cheat sheet</h2>
+      <p class="section-lede">The same everyday tasks on both systems. Click any command to run it in the terminal
+        above.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Task</th>
+              <th scope="col">Linux (bash)</th>
+              <th scope="col">Windows (CMD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">List files</th>
+              <td><button type="button" class="try" data-os="linux" data-try="ls -l">ls -l</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="dir">dir</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Current folder</th>
+              <td><button type="button" class="try" data-os="linux" data-try="pwd">pwd</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="cd">cd</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Change folder</th>
+              <td><button type="button" class="try" data-os="linux" data-try="cd ~/projects">cd ~/projects</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="cd %USERPROFILE%\Documents">cd %USERPROFILE%\Documents</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Read a file</th>
+              <td><button type="button" class="try" data-os="linux" data-try="cat ~/about.txt">cat ~/about.txt</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="type %USERPROFILE%\Documents\about.txt">type %USERPROFILE%\Documents\about.txt</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Search inside files</th>
+              <td><button type="button" class="try" data-os="linux" data-try="grep -n Failed /var/log/auth.log">grep -n Failed /var/log/auth.log</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="findstr /n WARN C:\Logs\backup.log">findstr /n WARN C:\Logs\backup.log</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Find files by name</th>
+              <td><button type="button" class="try" data-os="linux" data-try="find ~ -name &quot;*.md&quot;">find ~ -name "*.md"</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="dir C:\Users\guest /s /b *.txt">dir C:\Users\guest /s /b *.txt</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Create a folder</th>
+              <td><button type="button" class="try" data-os="linux" data-try="mkdir -p ~/lab/test">mkdir -p ~/lab/test</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="mkdir C:\Users\guest\Lab\Test">mkdir C:\Users\guest\Lab\Test</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Write to a file</th>
+              <td><button type="button" class="try" data-os="linux" data-try="echo &quot;hello&quot; > /tmp/hello.txt">echo "hello" &gt; /tmp/hello.txt</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="echo hello > C:\Logs\hello.txt">echo hello &gt; C:\Logs\hello.txt</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Copy a file</th>
+              <td><button type="button" class="try" data-os="linux" data-try="cp ~/about.txt /tmp/">cp ~/about.txt /tmp/</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="copy C:\Users\guest\Documents\about.txt C:\Logs">copy C:\Users\guest\Documents\about.txt C:\Logs</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Directory tree</th>
+              <td><button type="button" class="try" data-os="linux" data-try="tree ~">tree ~</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="tree C:\Users\guest /f">tree C:\Users\guest /f</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Network settings</th>
+              <td><button type="button" class="try" data-os="linux" data-try="ip a">ip a</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="ipconfig">ipconfig</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Test connectivity</th>
+              <td><button type="button" class="try" data-os="linux" data-try="ping -c 4 example.com">ping -c 4 example.com</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="ping example.com">ping example.com</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Running processes</th>
+              <td><button type="button" class="try" data-os="linux" data-try="ps aux">ps aux</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="tasklist">tasklist</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Stop a process</th>
+              <td><button type="button" class="try" data-os="linux" data-try="kill 1342">kill 1342</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="taskkill /im notepad.exe">taskkill /im notepad.exe</button></td>
+            </tr>
+            <tr>
+              <th scope="row">System version</th>
+              <td><button type="button" class="try" data-os="linux" data-try="uname -a">uname -a</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="ver">ver</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Environment variables</th>
+              <td><button type="button" class="try" data-os="linux" data-try="env">env</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="set">set</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Command help</th>
+              <td><button type="button" class="try" data-os="linux" data-try="man grep">man grep</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="help findstr">help findstr</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Clear the screen</th>
+              <td><button type="button" class="try" data-os="linux" data-try="clear">clear</button></td>
+              <td><button type="button" class="try" data-os="windows" data-try="cls">cls</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="about">Built by <a href="../index.html">Ayush Hamal</a>. The shells understand about 50 Linux commands and
+      40 Windows commands, with pipes, redirects, permissions and realistic error messages. Ping results and network
+      details are simulated: no real network traffic is sent.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; <span id="year">2026</span> Ayush Hamal</div>
+  </footer>
+
+  <script src="../js/terminal.js"></script>
+</body>
+
+</html>
