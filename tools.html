@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0B110E" />
+  <title>tools/ — Ayush Hamal</title>
+  <meta name="description" content="Free tools by Ayush Hamal: a Linux &amp; Windows terminal simulator and an IPv4 subnet calculator." />
+  <meta name="author" content="Ayush Hamal" />
+  <link rel="canonical" href="https://ayushhamal.com.np/tools.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="tools/ — Ayush Hamal" />
+  <meta property="og:description" content="Free tools by Ayush Hamal: a Linux &amp; Windows terminal simulator and an IPv4 subnet calculator." />
+  <meta property="og:url" content="https://ayushhamal.com.np/tools.html" />
+  <meta property="og:image" content="https://ayushhamal.com.np/assets/images/profile.jpg" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap">
+  <link rel="stylesheet" href="css/hacker.css" />
+  <link rel="stylesheet" href="css/pages/tools.css" />
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="x539ff1">
+
+<header class="x335464">
+<nav class="x30865e" aria-label="Main">
+<a class="xd0eaa2" href="index.html"><span class="xdcde1a">ayush</span>@portfolio<span class="x5313f5">:~/tools</span><span class="xb9c4ca">$</span></a>
+<div class="xd45591">
+<a class="x244e0f" href="index.html">~</a>
+<a class="x244e0f" href="about.html">about.md</a>
+<a class="x244e0f" href="career.html">career.log</a>
+<a class="x244e0f" href="projects.html">projects/</a>
+<a class="xd98887" href="tools.html" aria-current="page">tools/</a>
+<a class="x244e0f" href="learning.html">.tryhackme</a>
+<a class="x244e0f" href="contact.html">contact.sh</a>
+</div>
+</nav>
+</header>
+
+<main id="main" class="x2a9513">
+<div>
+<p class="x433569"><span class="xdcde1a">$</span> ls -l ~/tools</p>
+<h1 class="xd1817f"># try something I built</h1>
+<p class="x9b614d">Both run entirely in your browser. Nothing you type is sent anywhere.</p>
+</div>
+
+<div class="cols x351d87">
+<article class="card xc0950e">
+<div class="x706b77"><span class="x9e6852">terminal.sh</span><span class="xd018f0">-rwxr-xr-x</span></div>
+<pre class="xe44b47"><span class="xdcde1a">guest@portfolio:~$</span> grep -c Failed /var/log/auth.log
+3
+<span class="xdcde1a">guest@portfolio:~$</span> dir
+dir: command not found
+Hint: on Linux, use "ls" instead of "dir".
+
+<span class="x8edadb">C:\Users\guest&gt;</span> tasklist | findstr exe
+explorer.exe     4120 Console    1   98,204 K</pre>
+<p class="x8ea797">A Linux (bash) and Windows (CMD) terminal side by side: ~90 commands, pipes, redirects, permissions and a Linux ↔ Windows cheat sheet.</p>
+<a class="x30cc76" href="tools/terminal.html">$ ./terminal.sh</a>
+</article>
+
+<article class="card xc0950e">
+<div class="x706b77"><span class="x9e6852">subnet-calc</span><span class="xd018f0">-rwxr-xr-x</span></div>
+<pre class="xe44b47"><span class="xdcde1a">$</span> subnet-calc 192.168.1.10/24
+network    192.168.1.0/24
+broadcast  192.168.1.255
+hosts      192.168.1.1 – 192.168.1.254 (254)
+binary     <span class="x5313f5">11000000.10101000.00000001</span>.<span class="x2327e1">00001010</span></pre>
+<p class="x8ea797">Network and broadcast addresses, host range, masks, a colour-coded binary view and a subnet-splitting table.</p>
+<a class="x30cc76" href="tools/subnet-calculator.html">$ ./subnet-calc</a>
+</article>
+</div>
+<p class="xb88f86">more tools coming — suggestions welcome via contact.sh</p>
+</main>
+
+<footer class="xe107ac">
+<div class="xccbde9">
+<span>[portfolio] 0:~ 1:about 2:career 3:projects 4:tools* 5:thm 6:contact</span>
+<span>© <span id="year">2026</span> ayush hamal · biratnagar · <span data-npt>09:41</span> NPT</span>
+</div>
+</footer>
+</div>
+
+<script src="js/hacker.js"></script>
+</body>
+
+</html>

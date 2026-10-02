@@ -1,0 +1,13 @@
+/* Page styles for tools/terminal.html (from the hacker-theme design) */
+body{margin:0;background:#0B110E}
+a{color:#CDEFD9;text-decoration:none}a:hover{color:#FFFFFF}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px)}
+nav a{transition:color .15s,text-shadow .15s}
+nav a:hover{color:#5CFF9D !important;text-shadow:0 0 10px rgba(92,255,157,.6)}
+main button{transition:box-shadow .15s,border-color .15s}
+main button:hover{border-color:#5CFF9D !important;box-shadow:0 0 14px rgba(92,255,157,.3)}
+section[aria-label="Terminal"]{transition:box-shadow .2s,border-color .2s}
+section[aria-label="Terminal"]:focus-within{border-color:#5CFF9D !important;box-shadow:0 0 0 1px rgba(92,255,157,.3),0 30px 70px -30px rgba(92,255,157,.6) !important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width:900px){header nav{padding:8px 16px !important;gap:8px !important}header nav > div{order:3;width:100%;flex-wrap:nowrap !important;overflow-x:auto}header nav > div a{white-space:nowrap}main{padding-left:16px !important;padding-right:16px !important}.cols{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}.cols2{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.tbl{overflow-x:auto !important}.tbl > *{min-width:680px}footer > div{padding-left:16px !important;padding-right:16px !important}footer > div > span:last-child{display:none}}
+@media (max-width:560px){main{padding-top:32px !important;padding-bottom:64px !important}main h1{font-size:28px !important;letter-spacing:-.5px !important}main h2{font-size:24px !important}.cols2{grid-template-columns:minmax(0,1fr) !important}.indent{padding-left:24px !important}section[aria-label="Terminal"] > div:last-child{height:62vh !important;font-size:12.5px !important;padding:12px !important}main [role="tablist"] button{flex:1}}

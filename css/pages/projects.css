@@ -1,0 +1,17 @@
+/* Page styles for projects.html (from the hacker-theme design) */
+body{margin:0;background:#0B110E}
+a{color:#CDEFD9;text-decoration:none}a:hover{color:#FFFFFF}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+body::before{content:"";position:fixed;left:0;right:0;top:-30vh;height:30vh;pointer-events:none;z-index:41;background:linear-gradient(180deg,transparent,rgba(92,255,157,.06),transparent);animation:sweep 9s linear infinite}
+@keyframes sweep{to{transform:translateY(160vh)}}
+.fill{transform-origin:left;animation:fill 1.2s ease-out both}
+@keyframes fill{from{transform:scaleX(0)}}
+.row{transition:background .12s}
+.row:hover{background:rgba(92,255,157,.09)}
+nav a{transition:color .15s,text-shadow .15s}
+nav a:hover{color:#5CFF9D !important;text-shadow:0 0 10px rgba(92,255,157,.6)}
+main button{transition:filter .12s}
+main button:hover{filter:brightness(1.25)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width:900px){header nav{padding:8px 16px !important;gap:8px !important}header nav > div{order:3;width:100%;flex-wrap:nowrap !important;overflow-x:auto}header nav > div a{white-space:nowrap}main{padding-left:16px !important;padding-right:16px !important}.cols{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}.cols2{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.tbl{overflow-x:auto !important}.tbl > *{min-width:680px}footer > div{padding-left:16px !important;padding-right:16px !important}footer > div > span:last-child{display:none}}
+@media (max-width:560px){main{padding-top:32px !important;padding-bottom:64px !important}main h1{font-size:34px !important;letter-spacing:-.5px !important}main h2{font-size:24px !important}.cols2{grid-template-columns:minmax(0,1fr) !important}.ascii pre{font-size:8.2px !important}.indent{padding-left:24px !important}}

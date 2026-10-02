@@ -1,37 +1,14 @@
-/* Styles for 404.html (matches the main site's tokens) */
+/* Styles for 404.html (hacker theme) */
 :root {
-  --bg: #0b0d10;
-  --text: #ecebe4;
-  --muted: #8a929c;
-  --accent: #3ddc97;
-  --on-accent: #0b0d10;
-  --error: #ff8a8a;
-  --path: #5ab0ff;
+  --bg: #0B110E;
+  --text: #CDEFD9;
+  --strong: #EAFBF0;
+  --muted: #7FA08C;
+  --accent: #5CFF9D;
+  --on-accent: #0B110E;
+  --error: #FF8A8A;
+  --path: #6CC4FF;
   color-scheme: dark;
-}
-
-:root[data-theme='light'] {
-  --bg: #fafaf7;
-  --text: #15171a;
-  --muted: #5f656d;
-  --accent: #047857;
-  --on-accent: #ffffff;
-  --error: #b91c1c;
-  --path: #1d4ed8;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme='dark']) {
-    --bg: #fafaf7;
-    --text: #15171a;
-    --muted: #5f656d;
-    --accent: #047857;
-    --on-accent: #ffffff;
-    --error: #b91c1c;
-    --path: #1d4ed8;
-    color-scheme: light;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -43,9 +20,22 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 900px 520px at 78% -8%, rgba(92, 255, 157, 0.11), transparent 62%),
+    linear-gradient(rgba(92, 255, 157, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 255, 157, 0.035) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
   color: var(--text);
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .16) 0 1px, transparent 1px 3px);
 }
 
 .box {
@@ -56,12 +46,6 @@ body {
   gap: 12px;
 }
 
-.prompt,
-.error,
-.btn {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-}
-
 .prompt { margin: 0; color: var(--muted); }
 .accent { color: var(--accent); }
 .path { color: var(--path); }
@@ -69,13 +53,15 @@ body {
 
 h1 {
   margin: 16px 0 0;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Space Mono', ui-monospace, monospace;
   font-size: clamp(5rem, 22vw, 9rem);
   line-height: 1;
   letter-spacing: -0.04em;
+  color: var(--strong);
+  text-shadow: 0 0 26px rgba(92, 255, 157, 0.35);
 }
 
-.lede { margin: 0 0 16px; color: var(--muted); font-size: 1.1rem; }
+.lede { margin: 0 0 16px; color: #9DBBA8; font-size: 1.05rem; }
 
 .btn {
   align-self: flex-start;
@@ -83,11 +69,12 @@ h1 {
   align-items: center;
   min-height: 48px;
   padding: 0 22px;
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--accent);
   color: var(--on-accent);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
+  box-shadow: 0 0 24px rgba(92, 255, 157, 0.35);
 }
 
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

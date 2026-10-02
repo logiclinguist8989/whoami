@@ -66,7 +66,14 @@ A modern, responsive portfolio website showcasing **7 projects** across Full-Sta
 
 ```
 whoami/
-├── index.html                  # Main portfolio page (entry point)
+├── index.html                  # Home  (~)
+├── about.html                  # About  (about.md)
+├── career.html                 # Experience  (career.log)
+├── projects.html               # Projects  (projects/, htop view with filters)
+├── gurans-sales.html           # Featured project detail  (man page)
+├── tools.html                  # Tools index  (tools/)
+├── learning.html               # TryHackMe & labs  (.tryhackme)
+├── contact.html                # Contact  (contact.sh)
 ├── 404.html                    # Custom 404 error page
 ├── robots.txt                  # Search engine crawling rules
 ├── sitemap.xml                 # Site structure for search engines
@@ -78,14 +85,14 @@ whoami/
 │   └── security.txt            # How to report a security issue (RFC 9116)
 │
 ├── css/
-│   ├── styles.css              # Site styling (design tokens, light/dark, responsive)
+│   ├── hacker.css              # Shared hacker-theme base + generated utility classes
+│   ├── pages/                  # Per-page effects (scanlines, typing, glitch, responsive)
 │   ├── terminal.css            # Terminal tool page styles
 │   ├── subnet-calculator.css   # Subnet calculator page styles
 │   └── 404.css                 # Not-found page styles
 │
 ├── js/
-│   ├── theme-init.js           # Applies the saved theme before first paint
-│   ├── script.js               # Theme toggle, mobile nav, project filter, live durations
+│   ├── hacker.js               # Live NPT clock, months in industry, project filters, copy email
 │   ├── subnet-calculator.js    # Subnet calculator logic
 │   └── terminal.js             # Simulated Linux (bash) & Windows (CMD) shells
 │

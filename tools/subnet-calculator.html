@@ -18,31 +18,37 @@
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
-    rel="stylesheet">
-  <script src="../js/theme-init.js"></script>
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0B110E" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap">
+  <link rel="stylesheet" href="../css/hacker.css" />
+  <link rel="stylesheet" href="../css/pages/tool-subnet-calculator.css" />
   <link rel="stylesheet" href="../css/subnet-calculator.css" />
 </head>
 
 <body>
-  <header>
-    <div class="wrap">
-      <a href="../index.html" class="logo">ayush<span>.</span>hamal</a>
-      <a href="../index.html#tools" class="back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M19 12H5"></path>
-          <path d="M11 18l-6-6 6-6"></path>
-        </svg>
-        Back to portfolio
-      </a>
-    </div>
-  </header>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="x539ff1">
 
-  <main class="wrap">
-    <p class="eyebrow">// Tools</p>
-    <h1>IPv4 Subnet Calculator</h1>
+<header class="x335464">
+<nav class="x30865e" aria-label="Main">
+<a class="xd0eaa2" href="../index.html"><span class="xdcde1a">ayush</span>@portfolio<span class="x5313f5">:~/tools</span><span class="xb9c4ca">$</span></a>
+<div class="xd45591">
+<a class="x244e0f" href="../index.html">~</a>
+<a class="x244e0f" href="../about.html">about.md</a>
+<a class="x244e0f" href="../career.html">career.log</a>
+<a class="x244e0f" href="../projects.html">projects/</a>
+<a class="xd98887" href="../tools.html" aria-current="page">tools/</a>
+<a class="x244e0f" href="../learning.html">.tryhackme</a>
+<a class="x244e0f" href="../contact.html">contact.sh</a>
+</div>
+</nav>
+</header>
+
+<main class="tool-main" id="main">
+    <a class="back-link" href="../tools.html">← cd ..</a>
+    <p class="eyebrow"><span>$</span> ./subnet-calc</p>
+    <h1># ipv4 subnet calculator</h1>
     <p class="lede">Enter an IP address with a CIDR prefix (like <code>192.168.1.10/24</code>) or pick a subnet mask.
       Everything is calculated in your browser — nothing is sent anywhere.</p>
 
@@ -118,11 +124,15 @@
       security tools. Handles every prefix from /0 to /32, including /31 point-to-point links (RFC 3021).</p>
   </main>
 
-  <footer>
-    <div class="wrap">&copy; <span id="year">2026</span> Ayush Hamal</div>
-  </footer>
-
-  <script src="../js/subnet-calculator.js"></script>
+<footer class="xe107ac">
+<div class="xccbde9">
+<span>[portfolio] 0:~ 1:about 2:career 3:projects 4:tools* 5:thm 6:contact</span>
+<span>© <span id="year">2026</span> ayush hamal · biratnagar · <span data-npt>09:41</span> NPT</span>
+</div>
+</footer>
+</div>
+<script src="../js/subnet-calculator.js"></script>
+<script src="../js/hacker.js"></script>
 </body>
 
 </html>

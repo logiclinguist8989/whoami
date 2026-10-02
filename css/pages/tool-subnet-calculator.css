@@ -1,0 +1,14 @@
+/* Page styles for tools/subnet-calculator.html (from the hacker-theme design) */
+body{margin:0;background:#0B110E}
+a{color:#CDEFD9;text-decoration:none}a:hover{color:#FFFFFF}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px)}
+nav a{transition:color .15s,text-shadow .15s}
+nav a:hover{color:#5CFF9D !important;text-shadow:0 0 10px rgba(92,255,157,.6)}
+main button{transition:box-shadow .15s,border-color .15s}
+main button:hover{border-color:#5CFF9D !important;box-shadow:0 0 14px rgba(92,255,157,.3)}
+main dl > div{transition:transform .15s,box-shadow .15s}
+main dl > div:hover{transform:translateY(-2px);box-shadow:0 0 18px rgba(92,255,157,.25)}
+main div:focus-within > input{caret-color:#5CFF9D}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width:900px){header nav{padding:8px 16px !important;gap:8px !important}header nav > div{order:3;width:100%;flex-wrap:nowrap !important;overflow-x:auto}header nav > div a{white-space:nowrap}main{padding-left:16px !important;padding-right:16px !important}.cols{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}.cols2{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.tbl{overflow-x:auto !important}.tbl > *{min-width:680px}footer > div{padding-left:16px !important;padding-right:16px !important}footer > div > span:last-child{display:none}}
+@media (max-width:560px){main{padding-top:32px !important;padding-bottom:64px !important}main h1{font-size:28px !important;letter-spacing:-.5px !important}main h2{font-size:24px !important}.cols2{grid-template-columns:minmax(0,1fr) !important}main input{font-size:16px !important}}
