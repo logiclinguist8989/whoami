@@ -2,7 +2,7 @@
 
 # 🌐 whoami — Developer Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=github)](https://logiclinguist8989.github.io/whoami/)
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=github)](https://ayushhamal.com.np/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -10,7 +10,7 @@
 
 A modern, responsive portfolio website showcasing **7 projects** across Full-Stack Development, Cybersecurity, and AI/ML — built with pure HTML, CSS & JavaScript.
 
-**[🚀 View Live Demo →](https://logiclinguist8989.github.io/whoami/)**
+**[🚀 View Live Demo →](https://ayushhamal.com.np/)**
 
 </div>
 
@@ -137,7 +137,7 @@ python -m http.server 8000
 1. Push code to GitHub
 2. Go to **Settings → Pages**
 3. Set Source → **Deploy from branch** → `main` → `/` (root)
-4. Your site is live at `https://<username>.github.io/whoami/`
+4. Your site is live at `https://<username>.github.io/whoami/` (or your custom domain, set in the `CNAME` file)
 
 ---
 
