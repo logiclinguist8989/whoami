@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subnet Calculator | Ayush Hamal</title>
+  <meta name="description"
+    content="Free IPv4 subnet calculator: network and broadcast address, host range, subnet mask, wildcard, binary breakdown and subnet splitting. Runs entirely in your browser." />
+  <meta name="author" content="Ayush Hamal" />
+  <link rel="canonical" href="https://logiclinguist8989.github.io/whoami/tools/subnet-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IPv4 Subnet Calculator — Ayush Hamal" />
+  <meta property="og:description" content="Calculate network, broadcast, host range and more from any IPv4 address and CIDR." />
+  <meta property="og:url" content="https://logiclinguist8989.github.io/whoami/tools/subnet-calculator.html" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <script>
+    // Apply the theme chosen on the main site before first paint
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) { /* storage unavailable */ }
+  </script>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #12161b;
+      --surface-2: #0e1115;
+      --line: #222932;
+      --text: #ecebe4;
+      --muted: #9ba3ad;
+      --accent: #3ddc97;
+      --accent-soft: rgba(61, 220, 151, 0.12);
+      --on-accent: #0b0d10;
+      --net: #5ab0ff;
+      --host: #f2b84b;
+      --error: #ff7a7a;
+      --radius: 14px;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    :root[data-theme='light'] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-2: #f1f5f9;
+      --line: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #047857;
+      --accent-soft: rgba(4, 120, 87, 0.1);
+      --on-accent: #ffffff;
+      --net: #1d4ed8;
+      --host: #b45309;
+      --error: #b91c1c;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme='dark']) {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-2: #f1f5f9;
+        --line: #e2e8f0;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #047857;
+        --accent-soft: rgba(4, 120, 87, 0.1);
+      --on-accent: #ffffff;
+        --net: #1d4ed8;
+        --host: #b45309;
+        --error: #b91c1c;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back:hover { color: var(--text); }
+
+    .eyebrow {
+      margin: 48px 0 8px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .lede {
+      margin: 0 0 32px;
+      max-width: 640px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    form.card {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    input, select, button {
+      font: inherit;
+      min-height: 48px;
+      border-radius: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+    }
+
+    input:focus, select:focus, button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    input[aria-invalid='true'] { border-color: var(--error); }
+
+    button {
+      padding: 0 24px;
+      border: none;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .examples {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .chip:hover { border-color: var(--accent); }
+
+    .error {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--error);
+      font-size: 0.9rem;
+    }
+
+    .error:empty { display: none; }
+
+    section { margin-top: 32px; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.3rem;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      min-width: 0;
+    }
+
+    .stat dt {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .stat dd {
+      margin: 6px 0 0;
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .stat.highlight {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .badge strong { color: var(--text); font-weight: 500; }
+
+    .binary {
+      overflow-x: auto;
+    }
+
+    .binary table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+
+    .binary th {
+      text-align: left;
+      padding: 10px 16px 10px 0;
+      font-family: var(--sans);
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .binary td {
+      padding: 10px 0;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+
+    .binary tr + tr { border-top: 1px solid var(--line); }
+
+    .bit-net { color: var(--net); }
+    .bit-host { color: var(--host); }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .legend span::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+
+    .legend .l-net::before { background: var(--net); }
+    .legend .l-host::before { background: var(--host); }
+
+    .split-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .split-controls label { width: 220px; }
+
+    .split-note {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .table-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+
+    .table-wrap th, .table-wrap td {
+      padding: 10px 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .table-wrap th {
+      position: sticky;
+      top: 0;
+      background: var(--surface-2);
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .table-wrap tbody tr { border-top: 1px solid var(--line); }
+    .table-wrap tbody tr:nth-child(even) { background: var(--surface-2); }
+
+    .about {
+      margin: 48px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      form.card {
+        grid-template-columns: 1fr;
+      }
+
+      .split-controls label { width: 100%; }
+      .split-controls button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <a href="../index.html" class="logo">Ayush<span>.</span></a>
+      <a href="../index.html#projects" class="back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5"></path>
+          <path d="M11 18l-6-6 6-6"></path>
+        </svg>
+        Back to portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">// Tools</p>
+    <h1>IPv4 Subnet Calculator</h1>
+    <p class="lede">Enter an IP address with a CIDR prefix (like <code>192.168.1.10/24</code>) or pick a subnet mask.
+      Everything is calculated in your browser — nothing is sent anywhere.</p>
+
+    <form id="calc-form" class="card" novalidate>
+      <label>
+        IP address or CIDR
+        <input id="ip-input" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"
+          placeholder="192.168.1.10/24" value="192.168.1.10/24" aria-describedby="calc-error" />
+      </label>
+      <label>
+        Subnet mask
+        <select id="mask-select" aria-label="Subnet mask (used when no /prefix is typed)"></select>
+      </label>
+      <button type="submit">Calculate</button>
+      <div class="examples">
+        <span>Try:</span>
+        <button type="button" class="chip" data-example="10.0.0.0/8">10.0.0.0/8</button>
+        <button type="button" class="chip" data-example="172.16.5.130/26">172.16.5.130/26</button>
+        <button type="button" class="chip" data-example="203.0.113.77/29">203.0.113.77/29</button>
+        <button type="button" class="chip" data-example="192.168.100.1/30">192.168.100.1/30</button>
+      </div>
+      <p id="calc-error" class="error" role="alert"></p>
+    </form>
+
+    <div id="output" hidden>
+      <section aria-labelledby="results-title">
+        <h2 id="results-title">Results</h2>
+        <div class="badges" id="badges"></div>
+        <dl class="results" id="results"></dl>
+      </section>
+
+      <section aria-labelledby="binary-title">
+        <h2 id="binary-title">Binary breakdown</h2>
+        <div class="card binary">
+          <table>
+            <tbody id="binary-body"></tbody>
+          </table>
+          <div class="legend">
+            <span class="l-net">Network bits</span>
+            <span class="l-host">Host bits</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="split-title">
+        <h2 id="split-title">Split into smaller subnets</h2>
+        <div class="card">
+          <div class="split-controls">
+            <label>
+              New prefix
+              <select id="split-select"></select>
+            </label>
+          </div>
+          <p class="split-note" id="split-note"></p>
+          <div class="table-wrap" id="split-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Network</th>
+                  <th scope="col">Host range</th>
+                  <th scope="col">Broadcast</th>
+                </tr>
+              </thead>
+              <tbody id="split-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="about">Built by <a href="../index.html">Ayush Hamal</a> as part of a small set of networking and
+      security tools. Handles every prefix from /0 to /32, including /31 point-to-point links (RFC 3021).</p>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; <span id="year">2026</span> Ayush Hamal</div>
+  </footer>
+
+  <script src="../js/subnet-calculator.js"></script>
+</body>
+
+</html>
