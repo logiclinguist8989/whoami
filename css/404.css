@@ -1,0 +1,93 @@
+/* Styles for 404.html (matches the main site's tokens) */
+:root {
+  --bg: #0b0d10;
+  --text: #ecebe4;
+  --muted: #8a929c;
+  --accent: #3ddc97;
+  --on-accent: #0b0d10;
+  --error: #ff8a8a;
+  --path: #5ab0ff;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #fafaf7;
+  --text: #15171a;
+  --muted: #5f656d;
+  --accent: #047857;
+  --on-accent: #ffffff;
+  --error: #b91c1c;
+  --path: #1d4ed8;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #fafaf7;
+    --text: #15171a;
+    --muted: #5f656d;
+    --accent: #047857;
+    --on-accent: #ffffff;
+    --error: #b91c1c;
+    --path: #1d4ed8;
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+.box {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prompt,
+.error,
+.btn {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.prompt { margin: 0; color: var(--muted); }
+.accent { color: var(--accent); }
+.path { color: var(--path); }
+.error { margin: 0; color: var(--error); }
+
+h1 {
+  margin: 16px 0 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(5rem, 22vw, 9rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.lede { margin: 0 0 16px; color: var(--muted); font-size: 1.1rem; }
+
+.btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

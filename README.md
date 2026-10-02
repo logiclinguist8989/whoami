@@ -74,10 +74,17 @@ whoami/
 ├── .gitignore                  # Git ignore rules
 ├── README.md                   # This file
 │
+├── .well-known/
+│   └── security.txt            # How to report a security issue (RFC 9116)
+│
 ├── css/
-│   └── styles.css              # Site styling (design tokens, light/dark, responsive)
+│   ├── styles.css              # Site styling (design tokens, light/dark, responsive)
+│   ├── terminal.css            # Terminal tool page styles
+│   ├── subnet-calculator.css   # Subnet calculator page styles
+│   └── 404.css                 # Not-found page styles
 │
 ├── js/
+│   ├── theme-init.js           # Applies the saved theme before first paint
 │   ├── script.js               # Theme toggle, mobile nav, project filter, live durations
 │   ├── subnet-calculator.js    # Subnet calculator logic
 │   └── terminal.js             # Simulated Linux (bash) & Windows (CMD) shells
