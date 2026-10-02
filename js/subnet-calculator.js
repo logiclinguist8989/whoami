@@ -11,7 +11,8 @@
     if (parts.length !== 4) return null;
     let value = 0;
     for (const part of parts) {
-      if (!/^\d{1,3}$/.test(part)) return null;
+      // Reject leading zeros ("010"), which some tools read as octal
+      if (!/^(0|[1-9]\d{0,2})$/.test(part)) return null;
       const octet = Number(part);
       if (octet > 255) return null;
       value = value * 256 + octet;
@@ -59,6 +60,7 @@
     ['127.0.0.0', 8, 'Loopback'],
     ['169.254.0.0', 16, 'Link-local'],
     ['172.16.0.0', 12, 'Private'],
+    ['192.0.0.0', 24, 'IETF protocol assignments'],
     ['192.0.2.0', 24, 'Documentation'],
     ['192.168.0.0', 16, 'Private'],
     ['198.18.0.0', 15, 'Benchmarking'],
@@ -113,35 +115,44 @@
     return { count, rows };
   }
 
-  // Accepts "a.b.c.d/nn", "a.b.c.d nn.nn.nn.nn" or a bare "a.b.c.d" (uses fallbackPrefix)
+  const IP_HELP = 'Use four numbers from 0 to 255, like 10.0.0.1.';
+
+  // Accepts "a.b.c.d/nn", "a.b.c.d nn", "a.b.c.d nn.nn.nn.nn" or a bare "a.b.c.d" (uses fallbackPrefix)
   function parseInput(text, fallbackPrefix) {
     const trimmed = text.trim();
     if (!trimmed) return { error: 'Enter an IPv4 address, for example 192.168.1.10/24.' };
+    if (trimmed.startsWith('/')) return { error: 'Add an IP address before the prefix, for example 10.0.0.0/8.' };
 
-    let ipText = trimmed;
+    // IP, then optionally "/prefix" or whitespace followed by a prefix or dotted mask
+    const match = trimmed.match(/^([^\s/]+)(?:\s*\/\s*(.*)|\s+(.*))?$/);
+    const ipText = match ? match[1] : trimmed;
     let prefix = fallbackPrefix;
 
-    if (trimmed.includes('/')) {
-      const [left, right] = trimmed.split('/');
-      ipText = left;
-      if (!/^\d{1,2}$/.test(right.trim()) || Number(right) > 32) {
-        return { error: 'The prefix after "/" must be a number from 0 to 32.' };
+    if (match && match[2] !== undefined) {
+      if (!/^\d{1,2}$/.test(match[2]) || Number(match[2]) > 32) {
+        return { error: 'The prefix after "/" must be a whole number from 0 to 32.' };
       }
-      prefix = Number(right);
-    } else if (/\s/.test(trimmed)) {
-      const [left, right] = trimmed.split(/\s+/);
-      ipText = left;
-      const mask = parseIp(right);
-      const maskPrefix = mask === null ? null : maskToPrefix(mask);
-      if (maskPrefix === null) {
-        return { error: `"${right}" is not a valid subnet mask.` };
+      prefix = Number(match[2]);
+    } else if (match && match[3] !== undefined) {
+      const rest = match[3];
+      if (/^\d{1,2}$/.test(rest) && Number(rest) <= 32) {
+        prefix = Number(rest);
+      } else {
+        const mask = parseIp(rest);
+        const maskPrefix = mask === null ? null : maskToPrefix(mask);
+        if (maskPrefix === null) {
+          return { error: `"${rest}" is not a valid subnet mask or prefix. Try 255.255.255.0 or /24.` };
+        }
+        prefix = maskPrefix;
       }
-      prefix = maskPrefix;
     }
 
     const ip = parseIp(ipText);
     if (ip === null) {
-      return { error: `"${ipText.trim()}" is not a valid IPv4 address. Use four numbers from 0 to 255, like 10.0.0.1.` };
+      if (ipText.split('.').some(part => /^0\d/.test(part))) {
+        return { error: `"${ipText}" has a number with a leading zero. Write it without the zero, like 10.0.0.1.` };
+      }
+      return { error: `"${ipText}" is not a valid IPv4 address. ${IP_HELP}` };
     }
     return { ip, prefix };
   }
@@ -285,6 +296,7 @@
     if (parsed.error) {
       errorEl.textContent = parsed.error;
       input.setAttribute('aria-invalid', 'true');
+      output.hidden = true; // don't leave stale results under an error
       return;
     }
     errorEl.textContent = '';
@@ -320,7 +332,13 @@
 
   // Allow sharing a calculation via the URL, e.g. #10.0.0.0/8
   function loadFromHash() {
-    if (location.hash.length > 1) input.value = decodeURIComponent(location.hash.slice(1));
+    if (location.hash.length > 1) {
+      try {
+        input.value = decodeURIComponent(location.hash.slice(1));
+      } catch (e) {
+        input.value = location.hash.slice(1); // malformed %-escape: show it as typed
+      }
+    }
     run();
   }
 
